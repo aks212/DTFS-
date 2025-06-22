@@ -93,9 +93,9 @@ const MiniChatbot = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           onClick={() => setIsOpen(true)}
-          className="h-16 w-16 rounded-full bg-gradient-to-r from-emerald-green-500 to-emerald-green-600 hover:from-emerald-green-600 hover:to-emerald-green-700 shadow-2xl hover:shadow-emerald-green-500/25 transition-all duration-300 group relative overflow-hidden"
+          className="h-16 w-16 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 group relative overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-green-400 to-emerald-green-500 rounded-full blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
           <MessageCircle className="h-7 w-7 relative z-10 group-hover:scale-110 transition-transform duration-300" />
           <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
         </Button>
@@ -106,7 +106,7 @@ const MiniChatbot = () => {
         <div className="fixed bottom-24 right-6 z-50 w-96 h-[32rem] animate-slide-up">
           <Card className="h-full flex flex-col bg-card/95 backdrop-blur-xl border border-border/50 shadow-2xl shadow-black/20 rounded-2xl overflow-hidden">
             {/* Enhanced Header */}
-            <div className="flex items-center justify-between p-6 bg-gradient-to-r from-emerald-green-500 to-emerald-green-600 text-white">
+            <div className="flex items-center justify-between p-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
                   <Bot className="h-5 w-5" />
@@ -143,7 +143,7 @@ const MiniChatbot = () => {
                         setInputValue(question);
                         handleSendMessage();
                       }}
-                      className="text-xs h-7 bg-background/50 hover:bg-emerald-green-500/10 hover:border-emerald-green-500/30"
+                      className="text-xs h-7 bg-background/50 hover:bg-blue-500/10 hover:border-blue-500/30"
                     >
                       {question}
                     </Button>
@@ -163,7 +163,7 @@ const MiniChatbot = () => {
                     className={`max-w-[85%] p-4 rounded-2xl text-sm leading-relaxed ${
                       message.isBot
                         ? 'bg-muted/80 text-foreground border border-border/30'
-                        : 'bg-gradient-to-r from-emerald-green-500 to-emerald-green-600 text-white shadow-lg'
+                        : 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg'
                     }`}
                   >
                     {message.text}
@@ -175,9 +175,9 @@ const MiniChatbot = () => {
                 <div className="flex justify-start">
                   <div className="bg-muted/80 p-4 rounded-2xl border border-border/30">
                     <div className="flex space-x-2">
-                      <div className="w-2 h-2 bg-emerald-green-500 rounded-full animate-bounce"></div>
-                      <div className="w-2 h-2 bg-emerald-green-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                      <div className="w-2 h-2 bg-emerald-green-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                     </div>
                   </div>
                 </div>
@@ -193,12 +193,12 @@ const MiniChatbot = () => {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Ask about DTFS features..."
-                  className="flex-1 bg-background/80 border-border/50 focus:border-emerald-green-500/50 focus:ring-emerald-green-500/20 rounded-xl"
+                  className="flex-1 bg-background/80 border-border/50 focus:border-blue-500/50 focus:ring-blue-500/20 rounded-xl"
                 />
                 <Button
                   onClick={handleSendMessage}
                   size="icon"
-                  className="bg-gradient-to-r from-emerald-green-500 to-emerald-green-600 hover:from-emerald-green-600 hover:to-emerald-green-700 rounded-xl"
+                  className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-xl"
                 >
                   <Send className="h-4 w-4" />
                 </Button>
