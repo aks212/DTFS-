@@ -1,4 +1,3 @@
-// Update this page (the content is just a fallback if you fail to update the page)
 
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
@@ -18,7 +17,10 @@ import {
   TrendingUp,
   Star,
   Brain,
-  Mic
+  Mic,
+  Sparkles,
+  Target,
+  Layers
 } from 'lucide-react';
 import MiniChatbot from '@/components/MiniChatbot';
 import TradeTimeline from '@/components/TradeTimeline';
@@ -32,47 +34,91 @@ const Index = () => {
   const heroTitleRef = useRef(null);
   const heroSubtitleRef = useRef(null);
   const heroButtonsRef = useRef(null);
+  const floatingIconsRef = useRef(null);
+  const featuresRef = useRef(null);
+  const statsRef = useRef(null);
 
   // Initialize GSAP animations
   useEffect(() => {
-    gsap.to(heroTitleRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: heroTitleRef.current,
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: true
+    // Hero animations with improved timing
+    const tl = gsap.timeline({ delay: 0.5 });
+    
+    tl.fromTo(heroTitleRef.current, 
+      { opacity: 0, y: 60, scale: 0.9 },
+      { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: 'power3.out' }
+    )
+    .fromTo(heroSubtitleRef.current,
+      { opacity: 0, y: 40 },
+      { opacity: 1, y: 0, duration: 1, ease: 'power2.out' },
+      '-=0.8'
+    )
+    .fromTo(heroButtonsRef.current,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' },
+      '-=0.6'
+    );
+
+    // Floating icons animation
+    gsap.set('.floating-icon', { opacity: 0, scale: 0 });
+    gsap.to('.floating-icon', {
+      opacity: 0.6,
+      scale: 1,
+      duration: 0.8,
+      stagger: 0.2,
+      delay: 2,
+      ease: 'back.out(1.7)'
+    });
+
+    // Continuous floating animation
+    gsap.to('.floating-icon', {
+      y: '-=20',
+      duration: 3,
+      ease: 'power1.inOut',
+      yoyo: true,
+      repeat: -1,
+      stagger: 0.5
+    });
+
+    // Features cards animation
+    ScrollTrigger.create({
+      trigger: featuresRef.current,
+      start: 'top 80%',
+      onEnter: () => {
+        gsap.fromTo('.feature-card',
+          { opacity: 0, y: 60, rotateX: 15 },
+          { 
+            opacity: 1, 
+            y: 0, 
+            rotateX: 0,
+            duration: 0.8, 
+            stagger: 0.15,
+            ease: 'power2.out'
+          }
+        );
       }
     });
 
-    gsap.to(heroSubtitleRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: heroSubtitleRef.current,
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: true
+    // Stats counter animation
+    ScrollTrigger.create({
+      trigger: statsRef.current,
+      start: 'top 70%',
+      onEnter: () => {
+        gsap.fromTo('.stat-number',
+          { innerText: 0 },
+          {
+            innerText: (i, el) => el.getAttribute('data-value'),
+            duration: 2,
+            ease: 'power2.out',
+            snap: { innerText: 1 },
+            stagger: 0.2
+          }
+        );
       }
     });
 
-    gsap.to(heroButtonsRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: heroButtonsRef.current,
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: true
-      }
-    });
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
 
   const features = [
@@ -80,45 +126,51 @@ const Index = () => {
       icon: Brain,
       title: "AI Trade Assistant",
       description: "Voice-first onboarding in local languages with Llama AI",
-      gradient: "from-emerald-green-500 to-emerald-green-600"
+      gradient: "from-emerald-green-500 to-emerald-green-600",
+      accent: "emerald-green"
     },
     {
       icon: Shield,
       title: "Smart Contract Escrow",
       description: "Blockchain-secured payments with automatic release",
-      gradient: "from-deep-indigo-500 to-deep-indigo-600"
+      gradient: "from-deep-indigo-500 to-deep-indigo-600",
+      accent: "deep-indigo"
     },
     {
       icon: CreditCard,
       title: "Stablecoin & Local Currency",
       description: "Support for USDC, USDT, and African currencies",
-      gradient: "from-sand-gold-500 to-sand-gold-600"
+      gradient: "from-sand-gold-500 to-sand-gold-600",
+      accent: "sand-gold"
     },
     {
       icon: FileText,
       title: "Trade Document Generator",
       description: "AI-powered export forms and compliance docs",
-      gradient: "from-emerald-green-500 to-emerald-green-600"
+      gradient: "from-emerald-green-500 to-emerald-green-600",
+      accent: "emerald-green"
     },
     {
       icon: Mic,
       title: "Multilingual Voice Interface",
       description: "Hausa, Yoruba, Igbo, English, French, Arabic support",
-      gradient: "from-deep-indigo-500 to-deep-indigo-600"
+      gradient: "from-deep-indigo-500 to-deep-indigo-600",
+      accent: "deep-indigo"
     },
     {
       icon: Users,
       title: "Agent Dashboard & USSD",
       description: "Offline access via USSD codes for remote areas",
-      gradient: "from-sand-gold-500 to-sand-gold-600"
+      gradient: "from-sand-gold-500 to-sand-gold-600",
+      accent: "sand-gold"
     }
   ];
 
   const stats = [
-    { number: "500K+", label: "SMEs to be onboarded", icon: Users },
-    { number: "$500M", label: "Trade volume goal by 2026", icon: TrendingUp },
-    { number: "1M+", label: "AI-generated documents", icon: FileText },
-    { number: "100+", label: "Global diaspora buyers", icon: Globe }
+    { number: "500", suffix: "K+", label: "SMEs to be onboarded", icon: Users },
+    { number: "500", suffix: "M", label: "Trade volume goal by 2026", icon: TrendingUp, prefix: "$" },
+    { number: "1", suffix: "M+", label: "AI-generated documents", icon: FileText },
+    { number: "100", suffix: "+", label: "Global diaspora buyers", icon: Globe }
   ];
 
   const testimonials = [
@@ -126,88 +178,118 @@ const Index = () => {
       name: "Amara Okafor",
       role: "Cocoa Exporter, Ghana",
       content: "DTFS made it possible for me to export directly to European buyers. The AI helped me complete all paperwork in minutes!",
-      rating: 5
+      rating: 5,
+      avatar: "AO"
     },
     {
       name: "Ibrahim Musa",
       role: "Textile Manufacturer, Nigeria",
       content: "The voice interface in Hausa was a game-changer. I can manage my exports without complex English forms.",
-      rating: 5
+      rating: 5,
+      avatar: "IM"
     },
     {
       name: "Sarah Chen",
       role: "Import Buyer, USA",
       content: "Finally found reliable African suppliers through DTFS. The escrow system gives me complete confidence.",
-      rating: 5
+      rating: 5,
+      avatar: "SC"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-deep-indigo-900 to-emerald-green-900 bg-opacity-50"></div>
+      <section className="relative min-h-screen flex items-center justify-center">
+        {/* Enhanced animated background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-deep-indigo-900 via-background to-emerald-green-900 opacity-90"></div>
+        <div className="absolute inset-0 bg-africa-pattern opacity-5"></div>
+        
+        {/* Floating Trade Icons */}
+        <div className="absolute inset-0 pointer-events-none" ref={floatingIconsRef}>
+          <Globe className="floating-icon absolute top-1/4 left-1/4 h-8 w-8 text-emerald-green-400" />
+          <Shield className="floating-icon absolute top-1/3 right-1/4 h-6 w-6 text-sand-gold-400" />
+          <Zap className="floating-icon absolute bottom-1/3 left-1/3 h-7 w-7 text-deep-indigo-400" />
+          <FileText className="floating-icon absolute bottom-1/4 right-1/3 h-6 w-6 text-emerald-green-400" />
+          <MessageSquare className="floating-icon absolute top-1/2 left-1/6 h-5 w-5 text-sand-gold-400" />
+          <Sparkles className="floating-icon absolute top-3/4 right-1/6 h-6 w-6 text-deep-indigo-400" />
+        </div>
         
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+        <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
+          <Badge className="mb-8 bg-emerald-green-500/20 text-emerald-green-400 border-emerald-green-500/30 hover:bg-emerald-green-500/30 transition-all duration-300">
+            <Sparkles className="h-4 w-4 mr-2" />
+            Powered by Llama AI & Blockchain
+          </Badge>
+          
           <h1 
             ref={heroTitleRef}
-            className="text-5xl md:text-7xl font-bold mb-8 leading-tight"
+            className="text-6xl md:text-8xl font-bold mb-8 leading-tight opacity-0"
           >
             Africa's First{' '}
-            <span className="text-gradient">AI-Powered</span>
+            <span className="text-gradient relative">
+              AI-Powered
+              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-green-500/20 to-sand-gold-500/20 blur-xl rounded-lg"></div>
+            </span>
             <br />
             Digital Trade Operating System
           </h1>
           
           <p 
             ref={heroSubtitleRef}
-            className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-5xl mx-auto leading-relaxed opacity-0"
           >
             DTFS connects African SMEs to the world with voice-first onboarding, 
-            escrow-secured payments, and AI-powered deal matching.
+            escrow-secured payments, and AI-powered deal matching in local languages.
           </p>
           
-          <div ref={heroButtonsRef} className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button size="lg" className="btn-primary">
-              Join Waitlist <ArrowRight className="ml-2 h-5 w-5" />
+          <div ref={heroButtonsRef} className="flex flex-col sm:flex-row gap-6 justify-center items-center opacity-0">
+            <Button size="lg" className="btn-primary group relative overflow-hidden">
+              <span className="relative z-10 flex items-center">
+                Join Waitlist 
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-green-600 to-emerald-green-700 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
             </Button>
-            <Button size="lg" variant="outline" className="btn-secondary">
-              Watch Demo
+            <Button size="lg" variant="outline" className="btn-secondary group">
+              <div className="flex items-center">
+                Watch Demo
+                <div className="ml-2 w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+              </div>
             </Button>
           </div>
         </div>
-
-        {/* Floating Trade Icons */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Floating icons */}
-        </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-muted/20">
+      {/* Enhanced Features Section */}
+      <section className="py-32 bg-gradient-to-b from-background to-muted/20" ref={featuresRef}>
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
+          <div className="text-center mb-20">
+            <Badge className="mb-6 bg-deep-indigo-500/20 text-deep-indigo-400 border-deep-indigo-500/30">
+              <Target className="h-4 w-4 mr-2" />
+              Advanced Technology
+            </Badge>
+            <h2 className="text-5xl md:text-6xl font-bold mb-8">
               Powered by <span className="text-gradient">Advanced AI Technology</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Experience the future of African trade with our comprehensive suite of AI-powered tools
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {features.map((feature, index) => (
-              <Card key={index} className="feature-card card-hover">
-                <CardHeader>
-                  <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${feature.gradient} flex items-center justify-center mb-4 glow-effect`}>
+              <Card key={index} className="feature-card group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-border transition-all duration-500">
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+                <CardHeader className="relative">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative`}>
                     <feature.icon className="h-8 w-8 text-white" />
+                    <div className={`absolute inset-0 bg-gradient-to-r ${feature.gradient} rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300`}></div>
                   </div>
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
+                  <CardTitle className="text-xl group-hover:text-foreground transition-colors duration-300">{feature.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                <CardContent className="relative">
+                  <p className="text-muted-foreground group-hover:text-muted-foreground/80 transition-colors duration-300">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -218,62 +300,72 @@ const Index = () => {
       {/* Trade Timeline Component */}
       <TradeTimeline />
 
-      {/* Llama AI Spotlight */}
-      <section className="py-20 bg-gradient-to-r from-deep-indigo-900 to-emerald-green-900 text-white">
-        <div className="container mx-auto px-6 text-center">
-          <div className="max-w-4xl mx-auto">
-            <div className="w-20 h-20 mx-auto mb-8 bg-white/20 rounded-full flex items-center justify-center">
-              <Brain className="h-10 w-10" />
+      {/* Enhanced Llama AI Spotlight */}
+      <section className="py-32 bg-gradient-to-br from-deep-indigo-900 via-background to-emerald-green-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-africa-pattern opacity-5"></div>
+        <div className="container mx-auto px-6 text-center relative">
+          <div className="max-w-5xl mx-auto">
+            <div className="w-24 h-24 mx-auto mb-8 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center relative group">
+              <Brain className="h-12 w-12 text-emerald-green-400" />
+              <div className="absolute inset-0 bg-emerald-green-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <h2 className="text-4xl font-bold mb-8">Powered by Llama AI</h2>
-            <p className="text-xl mb-12 opacity-90">
+            
+            <Badge className="mb-8 bg-white/10 text-white border-white/20">
+              <Layers className="h-4 w-4 mr-2" />
+              Llama AI Integration
+            </Badge>
+            
+            <h2 className="text-5xl md:text-6xl font-bold mb-8">Powered by Llama AI</h2>
+            <p className="text-xl mb-16 opacity-90 max-w-4xl mx-auto leading-relaxed">
               DTFS leverages advanced AI to transform voice commands into trade documents, 
               match buyers with sellers intelligently, and provide multilingual support across Africa.
             </p>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center">
-                <Mic className="h-8 w-8 mx-auto mb-4 text-emerald-green-400" />
-                <h3 className="font-semibold mb-2">Voice Processing</h3>
-                <p className="text-sm opacity-80">Natural language understanding in local dialects</p>
-              </div>
-              <div className="text-center">
-                <FileText className="h-8 w-8 mx-auto mb-4 text-sand-gold-400" />
-                <h3 className="font-semibold mb-2">Document Generation</h3>
-                <p className="text-sm opacity-80">AI-powered export forms and compliance docs</p>
-              </div>
-              <div className="text-center">
-                <MessageSquare className="h-8 w-8 mx-auto mb-4 text-emerald-green-400" />
-                <h3 className="font-semibold mb-2">Smart Matching</h3>
-                <p className="text-sm opacity-80">Semantic search for optimal trade partnerships</p>
-              </div>
-              <div className="text-center">
-                <Globe className="h-8 w-8 mx-auto mb-4 text-sand-gold-400" />
-                <h3 className="font-semibold mb-2">Multilingual Chat</h3>
-                <p className="text-sm opacity-80">Real-time translation and cultural adaptation</p>
-              </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { icon: Mic, title: "Voice Processing", desc: "Natural language understanding in local dialects", color: "emerald-green" },
+                { icon: FileText, title: "Document Generation", desc: "AI-powered export forms and compliance docs", color: "sand-gold" },
+                { icon: MessageSquare, title: "Smart Matching", desc: "Semantic search for optimal trade partnerships", color: "emerald-green" },
+                { icon: Globe, title: "Multilingual Chat", desc: "Real-time translation and cultural adaptation", color: "sand-gold" }
+              ].map((item, index) => (
+                <div key={index} className="group">
+                  <div className={`w-16 h-16 mx-auto mb-6 bg-${item.color}-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <item.icon className={`h-8 w-8 text-${item.color}-400`} />
+                  </div>
+                  <h3 className="font-semibold mb-3 text-lg">{item.title}</h3>
+                  <p className="text-sm opacity-80 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Impact Stats */}
-      <section className="py-20">
+      {/* Enhanced Impact Stats */}
+      <section className="py-32 bg-gradient-to-b from-background to-muted/20" ref={statsRef}>
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Our Impact Goals</h2>
-            <p className="text-xl text-muted-foreground">Building the future of African trade, one connection at a time</p>
+          <div className="text-center mb-20">
+            <Badge className="mb-6 bg-emerald-green-500/20 text-emerald-green-400 border-emerald-green-500/30">
+              <TrendingUp className="h-4 w-4 mr-2" />
+              Our Impact
+            </Badge>
+            <h2 className="text-5xl md:text-6xl font-bold mb-8">Our Impact Goals</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Building the future of African trade, one connection at a time</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {stats.map((stat, index) => (
-              <Card key={index} className="stat-card text-center card-hover">
+              <Card key={index} className="stat-card text-center group bg-card/50 backdrop-blur-sm border-border/50 hover:border-emerald-green-500/30 transition-all duration-500">
                 <CardContent className="p-8">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-emerald-green-500/20 rounded-full flex items-center justify-center">
-                    <stat.icon className="h-8 w-8 text-emerald-green-500" />
+                  <div className="w-20 h-20 mx-auto mb-6 bg-emerald-green-500/10 rounded-2xl flex items-center justify-center group-hover:bg-emerald-green-500/20 transition-colors duration-300">
+                    <stat.icon className="h-10 w-10 text-emerald-green-500" />
                   </div>
-                  <div className="text-4xl font-bold text-emerald-green-500 mb-2">{stat.number}</div>
-                  <p className="text-muted-foreground">{stat.label}</p>
+                  <div className="text-5xl font-bold text-emerald-green-500 mb-3 font-mono">
+                    {stat.prefix}
+                    <span className="stat-number" data-value={stat.number}>0</span>
+                    {stat.suffix}
+                  </div>
+                  <p className="text-muted-foreground font-medium">{stat.label}</p>
                 </CardContent>
               </Card>
             ))}
@@ -284,27 +376,38 @@ const Index = () => {
       {/* Press/Media Section */}
       <PressMediaSection />
 
-      {/* Testimonials */}
-      <section className="py-20 bg-muted/20">
+      {/* Enhanced Testimonials */}
+      <section className="py-32 bg-gradient-to-b from-muted/20 to-background">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">What Our Users Say</h2>
-            <p className="text-xl text-muted-foreground">Real stories from African traders transforming their businesses</p>
+          <div className="text-center mb-20">
+            <Badge className="mb-6 bg-sand-gold-500/20 text-sand-gold-400 border-sand-gold-500/30">
+              <Star className="h-4 w-4 mr-2 fill-current" />
+              Testimonials
+            </Badge>
+            <h2 className="text-5xl md:text-6xl font-bold mb-8">What Our Users Say</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Real stories from African traders transforming their businesses</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="testimonial-card card-hover">
+              <Card key={index} className="testimonial-card group bg-card/50 backdrop-blur-sm border-border/50 hover:border-border transition-all duration-500">
                 <CardContent className="p-8">
-                  <div className="flex mb-4">
+                  <div className="flex mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="h-5 w-5 text-sand-gold-500 fill-current" />
                     ))}
                   </div>
-                  <p className="text-muted-foreground mb-6 italic">"{testimonial.content}"</p>
-                  <div>
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  <blockquote className="text-muted-foreground mb-8 italic text-lg leading-relaxed">
+                    "{testimonial.content}"
+                  </blockquote>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-emerald-green-500 to-sand-gold-500 rounded-full flex items-center justify-center text-white font-semibold">
+                      {testimonial.avatar}
+                    </div>
+                    <div>
+                      <p className="font-semibold text-lg">{testimonial.name}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -313,75 +416,78 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-emerald-green-600 to-deep-indigo-600 text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6">Help Us Build the Future of Trade in Africa</h2>
-          <p className="text-xl mb-12 opacity-90 max-w-3xl mx-auto">
-            Join thousands of African entrepreneurs already transforming their businesses with DTFS
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              className="flex-1 px-6 py-4 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-white/50"
-            />
-            <Button size="lg" className="bg-white text-emerald-green-600 hover:bg-white/90 font-semibold px-8">
-              Join Early Access
-            </Button>
+      {/* Enhanced CTA Section */}
+      <section className="py-32 bg-gradient-to-br from-emerald-green-600 via-deep-indigo-600 to-sand-gold-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-africa-pattern opacity-10"></div>
+        <div className="container mx-auto px-6 text-center relative">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-bold mb-8">Help Us Build the Future of Trade in Africa</h2>
+            <p className="text-xl mb-12 opacity-90 leading-relaxed">
+              Join thousands of African entrepreneurs already transforming their businesses with DTFS
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="flex-1 px-6 py-4 rounded-xl text-black focus:outline-none focus:ring-4 focus:ring-white/30 transition-all duration-300 bg-white/95 backdrop-blur-sm"
+              />
+              <Button size="lg" className="bg-white text-emerald-green-600 hover:bg-white/90 font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105">
+                Join Early Access
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 bg-background border-t border-border">
+      {/* Enhanced Footer */}
+      <footer className="py-16 bg-background border-t border-border/50">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
-              <h3 className="font-bold text-lg mb-4">DTFS</h3>
-              <p className="text-muted-foreground text-sm">
+              <h3 className="font-bold text-2xl mb-6 text-gradient">DTFS</h3>
+              <p className="text-muted-foreground leading-relaxed">
                 Connecting African trade to the world through AI-powered innovation.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Platform</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground transition-colors">Features</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">API</a></li>
+              <h4 className="font-semibold mb-4 text-lg">Platform</h4>
+              <ul className="space-y-3 text-muted-foreground">
+                <li><a href="#" className="hover:text-foreground transition-colors duration-300">Features</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-300">Pricing</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-300">API</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Company</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Whitepaper</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Careers</a></li>
+              <h4 className="font-semibold mb-4 text-lg">Company</h4>
+              <ul className="space-y-3 text-muted-foreground">
+                <li><a href="#" className="hover:text-foreground transition-colors duration-300">About</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-300">Whitepaper</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-300">Careers</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Legal</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground transition-colors">Privacy</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Terms</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Security</a></li>
+              <h4 className="font-semibold mb-4 text-lg">Legal</h4>
+              <ul className="space-y-3 text-muted-foreground">
+                <li><a href="#" className="hover:text-foreground transition-colors duration-300">Privacy</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-300">Terms</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-300">Security</a></li>
               </ul>
             </div>
           </div>
           
-          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-muted-foreground">
+          <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-muted-foreground">
               © 2025 Nexus X Industries Ltd. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+            <div className="flex space-x-8 mt-4 md:mt-0">
+              <a href="#" className="text-muted-foreground hover:text-emerald-green-500 transition-colors duration-300">
                 LinkedIn
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-emerald-green-500 transition-colors duration-300">
                 Twitter
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-emerald-green-500 transition-colors duration-300">
                 YouTube
               </a>
             </div>
