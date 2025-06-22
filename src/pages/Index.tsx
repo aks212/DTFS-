@@ -4,23 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  ArrowRight, 
-  Globe, 
-  Shield, 
-  Zap, 
-  MessageSquare, 
-  FileText, 
-  CreditCard,
-  Users,
-  TrendingUp,
-  Star,
-  Brain,
-  Mic,
-  Sparkles,
-  Target,
-  Layers
-} from 'lucide-react';
+import { ArrowRight, Globe, Shield, Zap, MessageSquare, FileText, CreditCard, Users, TrendingUp, Star, Brain, Mic, Sparkles, Target, Layers } from 'lucide-react';
 import Header from '@/components/Header';
 import MiniChatbot from '@/components/MiniChatbot';
 import TradeTimeline from '@/components/TradeTimeline';
@@ -28,7 +12,6 @@ import PressMediaSection from '@/components/PressMediaSection';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
-
 const Index = () => {
   // Initialize refs for animations
   const heroTitleRef = useRef(null);
@@ -41,25 +24,42 @@ const Index = () => {
   // Initialize GSAP animations
   useEffect(() => {
     // Hero animations with improved timing
-    const tl = gsap.timeline({ delay: 0.5 });
-    
-    tl.fromTo(heroTitleRef.current, 
-      { opacity: 0, y: 60, scale: 0.9 },
-      { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: 'power3.out' }
-    )
-    .fromTo(heroSubtitleRef.current,
-      { opacity: 0, y: 40 },
-      { opacity: 1, y: 0, duration: 1, ease: 'power2.out' },
-      '-=0.8'
-    )
-    .fromTo(heroButtonsRef.current,
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' },
-      '-=0.6'
-    );
+    const tl = gsap.timeline({
+      delay: 0.5
+    });
+    tl.fromTo(heroTitleRef.current, {
+      opacity: 0,
+      y: 60,
+      scale: 0.9
+    }, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 1.2,
+      ease: 'power3.out'
+    }).fromTo(heroSubtitleRef.current, {
+      opacity: 0,
+      y: 40
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power2.out'
+    }, '-=0.8').fromTo(heroButtonsRef.current, {
+      opacity: 0,
+      y: 30
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: 'power2.out'
+    }, '-=0.6');
 
     // Floating icons animation
-    gsap.set('.floating-icon', { opacity: 0, scale: 0 });
+    gsap.set('.floating-icon', {
+      opacity: 0,
+      scale: 0
+    });
     gsap.to('.floating-icon', {
       opacity: 0.6,
       scale: 1,
@@ -84,17 +84,18 @@ const Index = () => {
       trigger: featuresRef.current,
       start: 'top 80%',
       onEnter: () => {
-        gsap.fromTo('.feature-card',
-          { opacity: 0, y: 60, rotateX: 15 },
-          { 
-            opacity: 1, 
-            y: 0, 
-            rotateX: 0,
-            duration: 0.8, 
-            stagger: 0.15,
-            ease: 'power2.out'
-          }
-        );
+        gsap.fromTo('.feature-card', {
+          opacity: 0,
+          y: 60,
+          rotateX: 15
+        }, {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power2.out'
+        });
       }
     });
 
@@ -103,102 +104,102 @@ const Index = () => {
       trigger: statsRef.current,
       start: 'top 70%',
       onEnter: () => {
-        gsap.fromTo('.stat-number',
-          { innerText: 0 },
-          {
-            innerText: (i, el) => el.getAttribute('data-value'),
-            duration: 2,
-            ease: 'power2.out',
-            snap: { innerText: 1 },
-            stagger: 0.2
-          }
-        );
+        gsap.fromTo('.stat-number', {
+          innerText: 0
+        }, {
+          innerText: (i, el) => el.getAttribute('data-value'),
+          duration: 2,
+          ease: 'power2.out',
+          snap: {
+            innerText: 1
+          },
+          stagger: 0.2
+        });
       }
     });
-
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
-
-  const features = [
-    {
-      icon: Brain,
-      title: "AI Trade Assistant",
-      description: "Voice-first onboarding in local languages with Llama AI",
-      gradient: "from-blue-500 to-blue-600",
-      accent: "blue"
-    },
-    {
-      icon: Shield,
-      title: "Smart Contract Escrow",
-      description: "Blockchain-secured payments with automatic release",
-      gradient: "from-blue-600 to-blue-700",
-      accent: "blue"
-    },
-    {
-      icon: CreditCard,
-      title: "Stablecoin & Local Currency",
-      description: "Support for USDC, USDT, and African currencies",
-      gradient: "from-blue-400 to-blue-500",
-      accent: "blue"
-    },
-    {
-      icon: FileText,
-      title: "Trade Document Generator",
-      description: "AI-powered export forms and compliance docs",
-      gradient: "from-blue-500 to-blue-600",
-      accent: "blue"
-    },
-    {
-      icon: Mic,
-      title: "Multilingual Voice Interface",
-      description: "Hausa, Yoruba, Igbo, English, French, Arabic support",
-      gradient: "from-blue-600 to-blue-700",
-      accent: "blue"
-    },
-    {
-      icon: Users,
-      title: "Agent Dashboard & USSD",
-      description: "Offline access via USSD codes for remote areas",
-      gradient: "from-blue-400 to-blue-500",
-      accent: "blue"
-    }
-  ];
-
-  const stats = [
-    { number: "500", suffix: "K+", label: "SMEs to be onboarded", icon: Users },
-    { number: "500", suffix: "M", label: "Trade volume goal by 2026", icon: TrendingUp, prefix: "$" },
-    { number: "1", suffix: "M+", label: "AI-generated documents", icon: FileText },
-    { number: "100", suffix: "+", label: "Global diaspora buyers", icon: Globe }
-  ];
-
-  const testimonials = [
-    {
-      name: "Amara Okafor",
-      role: "Cocoa Exporter, Ghana",
-      content: "DTFS made it possible for me to export directly to European buyers. The AI helped me complete all paperwork in minutes!",
-      rating: 5,
-      avatar: "AO"
-    },
-    {
-      name: "Ibrahim Musa",
-      role: "Textile Manufacturer, Nigeria",
-      content: "The voice interface in Hausa was a game-changer. I can manage my exports without complex English forms.",
-      rating: 5,
-      avatar: "IM"
-    },
-    {
-      name: "Sarah Chen",
-      role: "Import Buyer, USA",
-      content: "Finally found reliable African suppliers through DTFS. The escrow system gives me complete confidence.",
-      rating: 5,
-      avatar: "SC"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+  const features = [{
+    icon: Brain,
+    title: "AI Trade Assistant",
+    description: "Voice-first onboarding in local languages with Llama AI",
+    gradient: "from-blue-500 to-blue-600",
+    accent: "blue"
+  }, {
+    icon: Shield,
+    title: "Smart Contract Escrow",
+    description: "Blockchain-secured payments with automatic release",
+    gradient: "from-blue-600 to-blue-700",
+    accent: "blue"
+  }, {
+    icon: CreditCard,
+    title: "Stablecoin & Local Currency",
+    description: "Support for USDC, USDT, and African currencies",
+    gradient: "from-blue-400 to-blue-500",
+    accent: "blue"
+  }, {
+    icon: FileText,
+    title: "Trade Document Generator",
+    description: "AI-powered export forms and compliance docs",
+    gradient: "from-blue-500 to-blue-600",
+    accent: "blue"
+  }, {
+    icon: Mic,
+    title: "Multilingual Voice Interface",
+    description: "Hausa, Yoruba, Igbo, English, French, Arabic support",
+    gradient: "from-blue-600 to-blue-700",
+    accent: "blue"
+  }, {
+    icon: Users,
+    title: "Agent Dashboard & USSD",
+    description: "Offline access via USSD codes for remote areas",
+    gradient: "from-blue-400 to-blue-500",
+    accent: "blue"
+  }];
+  const stats = [{
+    number: "500",
+    suffix: "K+",
+    label: "SMEs to be onboarded",
+    icon: Users
+  }, {
+    number: "500",
+    suffix: "M",
+    label: "Trade volume goal by 2026",
+    icon: TrendingUp,
+    prefix: "$"
+  }, {
+    number: "1",
+    suffix: "M+",
+    label: "AI-generated documents",
+    icon: FileText
+  }, {
+    number: "100",
+    suffix: "+",
+    label: "Global diaspora buyers",
+    icon: Globe
+  }];
+  const testimonials = [{
+    name: "Amara Okafor",
+    role: "Cocoa Exporter, Ghana",
+    content: "DTFS made it possible for me to export directly to European buyers. The AI helped me complete all paperwork in minutes!",
+    rating: 5,
+    avatar: "AO"
+  }, {
+    name: "Ibrahim Musa",
+    role: "Textile Manufacturer, Nigeria",
+    content: "The voice interface in Hausa was a game-changer. I can manage my exports without complex English forms.",
+    rating: 5,
+    avatar: "IM"
+  }, {
+    name: "Sarah Chen",
+    role: "Import Buyer, USA",
+    content: "Finally found reliable African suppliers through DTFS. The escrow system gives me complete confidence.",
+    rating: 5,
+    avatar: "SC"
+  }];
+  return <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Header */}
       <Header />
 
@@ -223,12 +224,8 @@ const Index = () => {
           {/* DTFS Logo - Enhanced styling */}
           <div className="mb-8 flex justify-center">
             <div className="relative group">
-              <img 
-                src="/lovable-uploads/4e8c8711-f992-40c7-a9a1-7878a364990b.png" 
-                alt="DTFS Logo" 
-                className="h-32 w-auto filter brightness-110 contrast-110 drop-shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/30 to-blue-600/30 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-110"></div>
+              <img src="/lovable-uploads/4e8c8711-f992-40c7-a9a1-7878a364990b.png" alt="DTFS Logo" className="h-32 w-auto filter brightness-110 contrast-110 drop-shadow-2xl" />
+              
             </div>
           </div>
           
@@ -237,10 +234,7 @@ const Index = () => {
             Powered by Llama AI & Blockchain
           </Badge>
           
-          <h1 
-            ref={heroTitleRef}
-            className="text-6xl md:text-8xl font-bold mb-8 leading-tight opacity-0"
-          >
+          <h1 ref={heroTitleRef} className="text-6xl md:text-8xl font-bold mb-8 leading-tight opacity-0">
             Africa's First{' '}
             <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent relative">
               AI-Powered
@@ -250,10 +244,7 @@ const Index = () => {
             Digital Trade Operating System
           </h1>
           
-          <p 
-            ref={heroSubtitleRef}
-            className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-5xl mx-auto leading-relaxed opacity-0"
-          >
+          <p ref={heroSubtitleRef} className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-5xl mx-auto leading-relaxed opacity-0">
             DTFS connects African SMEs to the world with voice-first onboarding, 
             escrow-secured payments, and AI-powered deal matching in local languages.
           </p>
@@ -293,8 +284,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {features.map((feature, index) => (
-              <Card key={index} className="feature-card group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-blue-500/50 transition-all duration-500">
+            {features.map((feature, index) => <Card key={index} className="feature-card group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-blue-500/50 transition-all duration-500">
                 <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
                 <CardHeader className="relative">
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative`}>
@@ -306,8 +296,7 @@ const Index = () => {
                 <CardContent className="relative">
                   <p className="text-muted-foreground group-hover:text-muted-foreground/80 transition-colors duration-300">{feature.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -339,20 +328,33 @@ const Index = () => {
             </p>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                { icon: Mic, title: "Voice Processing", desc: "Natural language understanding in local dialects", color: "blue" },
-                { icon: FileText, title: "Document Generation", desc: "AI-powered export forms and compliance docs", color: "blue" },
-                { icon: MessageSquare, title: "Smart Matching", desc: "Semantic search for optimal trade partnerships", color: "blue" },
-                { icon: Globe, title: "Multilingual Chat", desc: "Real-time translation and cultural adaptation", color: "blue" }
-              ].map((item, index) => (
-                <div key={index} className="group">
+              {[{
+              icon: Mic,
+              title: "Voice Processing",
+              desc: "Natural language understanding in local dialects",
+              color: "blue"
+            }, {
+              icon: FileText,
+              title: "Document Generation",
+              desc: "AI-powered export forms and compliance docs",
+              color: "blue"
+            }, {
+              icon: MessageSquare,
+              title: "Smart Matching",
+              desc: "Semantic search for optimal trade partnerships",
+              color: "blue"
+            }, {
+              icon: Globe,
+              title: "Multilingual Chat",
+              desc: "Real-time translation and cultural adaptation",
+              color: "blue"
+            }].map((item, index) => <div key={index} className="group">
                   <div className={`w-16 h-16 mx-auto mb-6 bg-blue-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                     <item.icon className={`h-8 w-8 text-blue-400`} />
                   </div>
                   <h3 className="font-semibold mb-3 text-lg">{item.title}</h3>
                   <p className="text-sm opacity-80 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -371,8 +373,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            {stats.map((stat, index) => (
-              <Card key={index} className="stat-card text-center group bg-card/50 backdrop-blur-sm border-border/50 hover:border-blue-500/30 transition-all duration-500">
+            {stats.map((stat, index) => <Card key={index} className="stat-card text-center group bg-card/50 backdrop-blur-sm border-border/50 hover:border-blue-500/30 transition-all duration-500">
                 <CardContent className="p-8">
                   <div className="w-20 h-20 mx-auto mb-6 bg-blue-500/10 rounded-2xl flex items-center justify-center group-hover:bg-blue-500/20 transition-colors duration-300">
                     <stat.icon className="h-10 w-10 text-blue-500" />
@@ -384,8 +385,7 @@ const Index = () => {
                   </div>
                   <p className="text-muted-foreground font-medium">{stat.label}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -406,13 +406,10 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="testimonial-card group bg-card/50 backdrop-blur-sm border-border/50 hover:border-border transition-all duration-500">
+            {testimonials.map((testimonial, index) => <Card key={index} className="testimonial-card group bg-card/50 backdrop-blur-sm border-border/50 hover:border-border transition-all duration-500">
                 <CardContent className="p-8">
                   <div className="flex mb-6">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-blue-500 fill-current" />
-                    ))}
+                    {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="h-5 w-5 text-blue-500 fill-current" />)}
                   </div>
                   <blockquote className="text-muted-foreground mb-8 italic text-lg leading-relaxed">
                     "{testimonial.content}"
@@ -427,8 +424,7 @@ const Index = () => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -444,11 +440,7 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="flex-1 px-6 py-4 rounded-xl text-black focus:outline-none focus:ring-4 focus:ring-white/30 transition-all duration-300 bg-white/95 backdrop-blur-sm"
-              />
+              <input type="email" placeholder="Enter your email" className="flex-1 px-6 py-4 rounded-xl text-black focus:outline-none focus:ring-4 focus:ring-white/30 transition-all duration-300 bg-white/95 backdrop-blur-sm" />
               <Button size="lg" className="bg-white text-blue-600 hover:bg-white/90 font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105">
                 Join Early Access
               </Button>
@@ -463,11 +455,7 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="mb-6">
-                <img 
-                  src="/lovable-uploads/4e8c8711-f992-40c7-a9a1-7878a364990b.png" 
-                  alt="DTFS Logo" 
-                  className="h-12 w-auto"
-                />
+                <img src="/lovable-uploads/4e8c8711-f992-40c7-a9a1-7878a364990b.png" alt="DTFS Logo" className="h-12 w-auto" />
               </div>
               <p className="text-muted-foreground leading-relaxed">
                 Connecting African trade to the world through AI-powered innovation.
@@ -520,8 +508,6 @@ const Index = () => {
 
       {/* Mini Chatbot */}
       <MiniChatbot />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
