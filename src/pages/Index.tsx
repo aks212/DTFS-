@@ -224,7 +224,7 @@ const Index = () => {
           {/* DTFS Logo - Enhanced styling */}
           <div className="mb-8 flex justify-center">
             <div className="relative group">
-              <img src="/lovable-uploads/4e8c8711-f992-40c7-a9a1-7878a364990b.png" alt="DTFS Logo" className="h-32 w-auto filter brightness-110 contrast-110 drop-shadow-2xl" />
+              
               
             </div>
           </div>
