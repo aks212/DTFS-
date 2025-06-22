@@ -21,6 +21,7 @@ import {
   Target,
   Layers
 } from 'lucide-react';
+import Header from '@/components/Header';
 import MiniChatbot from '@/components/MiniChatbot';
 import TradeTimeline from '@/components/TradeTimeline';
 import PressMediaSection from '@/components/PressMediaSection';
@@ -198,8 +199,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center">
+      {/* Header */}
+      <Header />
+
+      {/* Hero Section - Updated with proper spacing for fixed header */}
+      <section className="relative min-h-screen flex items-center justify-center pt-20">
         {/* Enhanced animated background with blue theme */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-background to-blue-800 opacity-90"></div>
         <div className="absolute inset-0 bg-africa-pattern opacity-5"></div>
@@ -216,13 +220,16 @@ const Index = () => {
         
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
-          {/* DTFS Logo */}
+          {/* DTFS Logo - Enhanced styling */}
           <div className="mb-8 flex justify-center">
-            <img 
-              src="/lovable-uploads/4e8c8711-f992-40c7-a9a1-7878a364990b.png" 
-              alt="DTFS Logo" 
-              className="h-24 w-auto glow-effect"
-            />
+            <div className="relative group">
+              <img 
+                src="/lovable-uploads/4e8c8711-f992-40c7-a9a1-7878a364990b.png" 
+                alt="DTFS Logo" 
+                className="h-32 w-auto filter brightness-110 contrast-110 drop-shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/30 to-blue-600/30 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-110"></div>
+            </div>
           </div>
           
           <Badge className="mb-8 bg-blue-500/20 text-blue-400 border-blue-500/30 hover:bg-blue-500/30 transition-all duration-300">
@@ -269,8 +276,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Features Section */}
-      <section className="py-32 bg-gradient-to-b from-background to-muted/20" ref={featuresRef}>
+      {/* Enhanced Features Section - Add id for navigation */}
+      <section id="features" className="py-32 bg-gradient-to-b from-background to-muted/20" ref={featuresRef}>
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
             <Badge className="mb-6 bg-blue-500/20 text-blue-400 border-blue-500/30">
@@ -305,8 +312,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trade Timeline Component */}
-      <TradeTimeline />
+      {/* Trade Timeline Component - Add id for navigation */}
+      <section id="how-it-works">
+        <TradeTimeline />
+      </section>
 
       {/* Enhanced Llama AI Spotlight */}
       <section className="py-32 bg-gradient-to-br from-blue-900 via-background to-blue-800 text-white relative overflow-hidden">
@@ -384,8 +393,8 @@ const Index = () => {
       {/* Press/Media Section */}
       <PressMediaSection />
 
-      {/* Enhanced Testimonials */}
-      <section className="py-32 bg-gradient-to-b from-muted/20 to-background">
+      {/* Enhanced Testimonials - Add id for navigation */}
+      <section id="testimonials" className="py-32 bg-gradient-to-b from-muted/20 to-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
             <Badge className="mb-6 bg-blue-500/20 text-blue-400 border-blue-500/30">
@@ -424,8 +433,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced CTA Section */}
-      <section className="py-32 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white relative overflow-hidden">
+      {/* Enhanced CTA Section - Add id for navigation */}
+      <section id="contact" className="py-32 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-africa-pattern opacity-10"></div>
         <div className="container mx-auto px-6 text-center relative">
           <div className="max-w-4xl mx-auto">
@@ -448,8 +457,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Footer */}
-      <footer className="py-16 bg-background border-t border-border/50">
+      {/* Enhanced Footer - Add id for navigation */}
+      <footer id="about" className="py-16 bg-background border-t border-border/50">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
