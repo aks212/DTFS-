@@ -139,7 +139,7 @@ const TradeTimeline = () => {
 
                 <div className="mt-8 p-4 bg-emerald-green-500/10 rounded-lg border border-emerald-green-200/20">
                   <p className="text-center font-semibold text-emerald-green-400">
-                    Total Time: 5-10 minutes | Total Cost: <1% of trade value
+                    Total Time: 5-10 minutes | Total Cost: &lt;1% of trade value
                   </p>
                 </div>
               </CardContent>
