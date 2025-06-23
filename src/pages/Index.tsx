@@ -121,90 +121,84 @@ const Index = () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
-  const features = [
-    {
-      icon: Brain,
-      title: "AI Trade Assistant",
-      description: "Voice-first onboarding in local languages with Llama AI",
-      gradient: "from-blue-500 to-blue-600",
-      accent: "blue"
-    }, {
-      icon: Shield,
-      title: "Smart Contract Escrow",
-      description: "Blockchain-secured payments with automatic release",
-      gradient: "from-blue-600 to-blue-700",
-      accent: "blue"
-    }, {
-      icon: CreditCard,
-      title: "Stablecoin & Local Currency",
-      description: "Support for USDC, USDT, and African currencies",
-      gradient: "from-blue-400 to-blue-500",
-      accent: "blue"
-    }, {
-      icon: FileText,
-      title: "Trade Document Generator",
-      description: "AI-powered export forms and compliance docs",
-      gradient: "from-blue-500 to-blue-600",
-      accent: "blue"
-    }, {
-      icon: Mic,
-      title: "Multilingual Voice Interface",
-      description: "Hausa, Yoruba, Igbo, English, French, Arabic support",
-      gradient: "from-blue-600 to-blue-700",
-      accent: "blue"
-    }, {
-      icon: Users,
-      title: "Agent Dashboard & USSD",
-      description: "Offline access via USSD codes for remote areas",
-      gradient: "from-blue-400 to-blue-500",
-      accent: "blue"
-    }
-  ];
-  const stats = [
-    {
-      number: "500",
-      suffix: "K+",
-      label: "SMEs to be onboarded",
-      icon: Users
-    }, {
-      number: "500",
-      suffix: "M",
-      label: "Trade volume goal by 2026",
-      icon: TrendingUp,
-      prefix: "$"
-    }, {
-      number: "1",
-      suffix: "M+",
-      label: "AI-generated documents",
-      icon: FileText
-    }, {
-      number: "100",
-      suffix: "+",
-      label: "Global diaspora buyers",
-      icon: Globe
-    }
-  ];
-  const testimonials = [
-    {
-      name: "Amara Okafor",
-      role: "Cocoa Exporter, Ghana",
-      content: "DTFS made it possible for me to export directly to European buyers. The AI helped me complete all paperwork in minutes!",
-      rating: 5,
-      avatar: "AO"
-    }, {
-      name: "Ibrahim Musa",
-      role: "Textile Manufacturer, Nigeria",
-      content: "The voice interface in Hausa was a game-changer. I can manage my exports without complex English forms.",
-      rating: 5,
-      avatar: "IM"
-    }, {
-      name: "Sarah Chen",
-      role: "Import Buyer, USA",
-      content: "Finally found reliable African suppliers through DTFS. The escrow system gives me complete confidence.",
-      rating: 5,
-      avatar: "SC"
-    }
-  ];
+  const features = [{
+    icon: Brain,
+    title: "AI Trade Assistant",
+    description: "Voice-first onboarding in local languages with Llama AI",
+    gradient: "from-blue-500 to-blue-600",
+    accent: "blue"
+  }, {
+    icon: Shield,
+    title: "Smart Contract Escrow",
+    description: "Blockchain-secured payments with automatic release",
+    gradient: "from-blue-600 to-blue-700",
+    accent: "blue"
+  }, {
+    icon: CreditCard,
+    title: "Stablecoin & Local Currency",
+    description: "Support for USDC, USDT, and African currencies",
+    gradient: "from-blue-400 to-blue-500",
+    accent: "blue"
+  }, {
+    icon: FileText,
+    title: "Trade Document Generator",
+    description: "AI-powered export forms and compliance docs",
+    gradient: "from-blue-500 to-blue-600",
+    accent: "blue"
+  }, {
+    icon: Mic,
+    title: "Multilingual Voice Interface",
+    description: "Hausa, Yoruba, Igbo, English, French, Arabic support",
+    gradient: "from-blue-600 to-blue-700",
+    accent: "blue"
+  }, {
+    icon: Users,
+    title: "Agent Dashboard & USSD",
+    description: "Offline access via USSD codes for remote areas",
+    gradient: "from-blue-400 to-blue-500",
+    accent: "blue"
+  }];
+  const stats = [{
+    number: "500",
+    suffix: "K+",
+    label: "SMEs to be onboarded",
+    icon: Users
+  }, {
+    number: "500",
+    suffix: "M",
+    label: "Trade volume goal by 2026",
+    icon: TrendingUp,
+    prefix: "$"
+  }, {
+    number: "1",
+    suffix: "M+",
+    label: "AI-generated documents",
+    icon: FileText
+  }, {
+    number: "100",
+    suffix: "+",
+    label: "Global diaspora buyers",
+    icon: Globe
+  }];
+  const testimonials = [{
+    name: "Amara Okafor",
+    role: "Cocoa Exporter, Ghana",
+    content: "DTFS made it possible for me to export directly to European buyers. The AI helped me complete all paperwork in minutes!",
+    rating: 5,
+    avatar: "AO"
+  }, {
+    name: "Ibrahim Musa",
+    role: "Textile Manufacturer, Nigeria",
+    content: "The voice interface in Hausa was a game-changer. I can manage my exports without complex English forms.",
+    rating: 5,
+    avatar: "IM"
+  }, {
+    name: "Sarah Chen",
+    role: "Import Buyer, USA",
+    content: "Finally found reliable African suppliers through DTFS. The escrow system gives me complete confidence.",
+    rating: 5,
+    avatar: "SC"
+  }];
   return <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Header */}
       <Header />
@@ -256,23 +250,14 @@ const Index = () => {
           </p>
           
           <div ref={heroButtonsRef} className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center opacity-0">
-            <Button 
-              size="lg" 
-              className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl group relative overflow-hidden"
-              onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdzWfp9ds_YE7-8N4HNVQV5cc8ZRpaZJT7UWgdJ5NCbLjotHw/viewform?usp=pp_url', '_blank')}
-            >
+            <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl group relative overflow-hidden" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdzWfp9ds_YE7-8N4HNVQV5cc8ZRpaZJT7UWgdJ5NCbLjotHw/viewform?usp=pp_url', '_blank')}>
               <span className="relative z-10 flex items-center justify-center">
                 Join Waitlist 
                 <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="w-full sm:w-auto bg-transparent border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 group"
-              onClick={() => window.open('https://youtu.be/ddUETvq81ow', '_blank')}
-            >
+            <Button size="lg" variant="outline" className="w-full sm:w-auto bg-transparent border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 group" onClick={() => window.open('https://youtu.be/ddUETvq81ow', '_blank')}>
               <div className="flex items-center justify-center">
                 Watch Demo
                 <div className="ml-2 w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
@@ -478,33 +463,27 @@ const Index = () => {
           <div className="text-center mb-12 md:mb-16">
             <h3 className="text-2xl md:text-4xl font-bold mb-8 md:mb-12">Our Core Values</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-              {[
-                {
-                  icon: Heart,
-                  title: "Inclusivity",
-                  description: "Making trade accessible for everyone, regardless of language or location",
-                  color: "from-blue-500 to-blue-600"
-                },
-                {
-                  icon: Shield,
-                  title: "Trust",
-                  description: "Building secure, transparent systems that protect all parties",
-                  color: "from-blue-600 to-blue-700"
-                },
-                {
-                  icon: Brain,
-                  title: "Innovation",
-                  description: "Leveraging cutting-edge AI to solve real-world problems",
-                  color: "from-blue-400 to-blue-500"
-                },
-                {
-                  icon: Award,
-                  title: "Excellence",
-                  description: "Delivering world-class solutions with attention to detail",
-                  color: "from-blue-500 to-blue-600"
-                }
-              ].map((value, index) => (
-                <Card key={index} className="group bg-card/50 backdrop-blur-sm border-border/50 hover:border-blue-500/30 transition-all duration-500">
+              {[{
+              icon: Heart,
+              title: "Inclusivity",
+              description: "Making trade accessible for everyone, regardless of language or location",
+              color: "from-blue-500 to-blue-600"
+            }, {
+              icon: Shield,
+              title: "Trust",
+              description: "Building secure, transparent systems that protect all parties",
+              color: "from-blue-600 to-blue-700"
+            }, {
+              icon: Brain,
+              title: "Innovation",
+              description: "Leveraging cutting-edge AI to solve real-world problems",
+              color: "from-blue-400 to-blue-500"
+            }, {
+              icon: Award,
+              title: "Excellence",
+              description: "Delivering world-class solutions with attention to detail",
+              color: "from-blue-500 to-blue-600"
+            }].map((value, index) => <Card key={index} className="group bg-card/50 backdrop-blur-sm border-border/50 hover:border-blue-500/30 transition-all duration-500">
                   <CardContent className="p-6 text-center">
                     <div className={`w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 bg-gradient-to-r ${value.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                       <value.icon className="h-6 w-6 md:h-8 md:w-8 text-white" />
@@ -512,8 +491,7 @@ const Index = () => {
                     <h4 className="text-lg md:text-xl font-semibold mb-3">{value.title}</h4>
                     <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{value.description}</p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
 
@@ -527,7 +505,7 @@ const Index = () => {
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base">
               <div className="flex items-center gap-2">
                 <Globe className="h-4 w-4 md:h-5 md:w-5 text-blue-500" />
-                <span>Based in Lagos, Nigeria</span>
+                <span>Based in Kano, Nigeria</span>
               </div>
               <div className="flex items-center gap-2">
                 <Users className="h-4 w-4 md:h-5 md:w-5 text-blue-500" />
@@ -535,7 +513,7 @@ const Index = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Award className="h-4 w-4 md:h-5 md:w-5 text-blue-500" />
-                <span>Y Combinator Backed</span>
+                <span>AFCTA Backed</span>
               </div>
             </div>
           </div>
