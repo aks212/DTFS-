@@ -250,14 +250,23 @@ const Index = () => {
           </p>
           
           <div ref={heroButtonsRef} className="flex flex-col sm:flex-row gap-6 justify-center items-center opacity-0">
-            <Button size="lg" className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl group relative overflow-hidden">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl group relative overflow-hidden"
+              onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdzWfp9ds_YE7-8N4HNVQV5cc8ZRpaZJT7UWgdJ5NCbLjotHw/viewform?usp=pp_url', '_blank')}
+            >
               <span className="relative z-10 flex items-center">
                 Join Waitlist 
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
             </Button>
-            <Button size="lg" variant="outline" className="bg-transparent border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 group">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="bg-transparent border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 group"
+              onClick={() => window.open('https://youtu.be/ddUETvq81ow', '_blank')}
+            >
               <div className="flex items-center">
                 Watch Demo
                 <div className="ml-2 w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
