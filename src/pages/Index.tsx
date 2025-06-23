@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Globe, Shield, Zap, MessageSquare, FileText, CreditCard, Users, TrendingUp, Star, Brain, Mic, Sparkles, Target, Layers, Heart, Award, Rocket } from 'lucide-react';
+import { ArrowRight, Globe, Shield, Zap, MessageSquare, FileText, CreditCard, Users, TrendingUp, Star, Brain, Mic, Sparkles, Target, Layers, Heart, Award, Rocket, Download, Facebook, Twitter, Linkedin, Youtube, Instagram } from 'lucide-react';
 import Header from '@/components/Header';
 import MiniChatbot from '@/components/MiniChatbot';
 import TradeTimeline from '@/components/TradeTimeline';
@@ -79,6 +79,20 @@ const Index = () => {
       stagger: 0.5
     });
 
+    // Social icons animation
+    gsap.set('.social-icon', {
+      opacity: 0,
+      scale: 0
+    });
+    gsap.to('.social-icon', {
+      opacity: 1,
+      scale: 1,
+      duration: 0.6,
+      stagger: 0.1,
+      delay: 3,
+      ease: 'back.out(1.7)'
+    });
+
     // Features cards animation
     ScrollTrigger.create({
       trigger: featuresRef.current,
@@ -121,6 +135,7 @@ const Index = () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
+
   const features = [
     {
       icon: Brain,
@@ -215,10 +230,30 @@ const Index = () => {
       avatar: "SC"
     }
   ];
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Header */}
       <Header />
+
+      {/* Floating Social Icons */}
+      <div className="fixed right-4 md:right-6 top-1/2 transform -translate-y-1/2 z-40 flex flex-col gap-3">
+        <a href="#" className="social-icon group bg-blue-500/10 backdrop-blur-sm hover:bg-blue-500 p-3 rounded-full border border-blue-500/20 transition-all duration-300 hover:scale-110">
+          <Facebook className="h-4 w-4 md:h-5 md:w-5 text-blue-500 group-hover:text-white transition-colors duration-300" />
+        </a>
+        <a href="#" className="social-icon group bg-blue-500/10 backdrop-blur-sm hover:bg-blue-400 p-3 rounded-full border border-blue-500/20 transition-all duration-300 hover:scale-110">
+          <Twitter className="h-4 w-4 md:h-5 md:w-5 text-blue-500 group-hover:text-white transition-colors duration-300" />
+        </a>
+        <a href="#" className="social-icon group bg-blue-500/10 backdrop-blur-sm hover:bg-blue-600 p-3 rounded-full border border-blue-500/20 transition-all duration-300 hover:scale-110">
+          <Linkedin className="h-4 w-4 md:h-5 md:w-5 text-blue-500 group-hover:text-white transition-colors duration-300" />
+        </a>
+        <a href="https://youtu.be/ddUETvq81ow" target="_blank" rel="noopener noreferrer" className="social-icon group bg-blue-500/10 backdrop-blur-sm hover:bg-red-500 p-3 rounded-full border border-blue-500/20 transition-all duration-300 hover:scale-110">
+          <Youtube className="h-4 w-4 md:h-5 md:w-5 text-blue-500 group-hover:text-white transition-colors duration-300" />
+        </a>
+        <a href="#" className="social-icon group bg-blue-500/10 backdrop-blur-sm hover:bg-pink-500 p-3 rounded-full border border-blue-500/20 transition-all duration-300 hover:scale-110">
+          <Instagram className="h-4 w-4 md:h-5 md:w-5 text-blue-500 group-hover:text-white transition-colors duration-300" />
+        </a>
+      </div>
 
       {/* Hero Section - Updated with proper spacing for fixed header */}
       <section className="relative min-h-screen flex items-center justify-center pt-16 md:pt-20">
@@ -278,6 +313,12 @@ const Index = () => {
               <div className="flex items-center justify-center">
                 Watch Demo
                 <div className="ml-2 w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+              </div>
+            </Button>
+            <Button size="lg" variant="outline" className="w-full sm:w-auto bg-transparent border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 group">
+              <div className="flex items-center justify-center">
+                <Download className="mr-2 h-4 w-4 md:h-5 md:w-5 group-hover:animate-pulse" />
+                Install App
               </div>
             </Button>
           </div>
