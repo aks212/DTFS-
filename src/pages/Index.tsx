@@ -255,11 +255,32 @@ const Index = () => {
         </a>
       </div>
 
-      {/* Hero Section - Updated with proper spacing for fixed header */}
-      <section className="relative min-h-screen flex items-center justify-center pt-16 md:pt-20">
-        {/* Enhanced animated background with blue theme */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-background to-blue-800 opacity-90"></div>
-        <div className="absolute inset-0 bg-africa-pattern opacity-5"></div>
+      {/* Hero Section - Updated with container ship video background */}
+      <section className="relative min-h-screen flex items-center justify-center pt-16 md:pt-20 overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 w-full h-full">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="https://videos.pexels.com/video-files/6774244/6774244-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+            {/* Fallback for browsers that don't support video */}
+            <div className="w-full h-full bg-gradient-to-br from-blue-900 via-background to-blue-800"></div>
+          </video>
+        </div>
+        
+        {/* Enhanced overlay with blue theme and shipping pattern */}
+        <div className="absolute inset-0">
+          {/* Primary overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-background/85 to-blue-800/80"></div>
+          {/* Secondary overlay with shipping/trade pattern */}
+          <div className="absolute inset-0 bg-africa-pattern opacity-10"></div>
+          {/* Subtle animated overlay for dynamic effect */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/40"></div>
+        </div>
         
         {/* Floating Trade Icons */}
         <div className="absolute inset-0 pointer-events-none" ref={floatingIconsRef}>
@@ -281,12 +302,12 @@ const Index = () => {
             </div>
           </div>
           
-          <Badge className="mb-6 md:mb-8 bg-blue-500/20 text-blue-400 border-blue-500/30 hover:bg-blue-500/30 transition-all duration-300 text-xs md:text-sm">
+          <Badge className="mb-6 md:mb-8 bg-blue-500/20 text-blue-400 border-blue-500/30 hover:bg-blue-500/30 transition-all duration-300 text-xs md:text-sm backdrop-blur-sm">
             <Sparkles className="h-3 w-3 md:h-4 md:w-4 mr-2" />
             Powered by Llama AI & Blockchain
           </Badge>
           
-          <h1 ref={heroTitleRef} className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight opacity-0">
+          <h1 ref={heroTitleRef} className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight opacity-0 text-white drop-shadow-2xl">
             Africa's First{' '}
             <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent relative">
               AI-Powered
@@ -296,26 +317,26 @@ const Index = () => {
             Digital Trade Operating System
           </h1>
           
-          <p ref={heroSubtitleRef} className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 md:mb-12 max-w-5xl mx-auto leading-relaxed opacity-0">
+          <p ref={heroSubtitleRef} className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 md:mb-12 max-w-5xl mx-auto leading-relaxed opacity-0 drop-shadow-lg">
             DTFS connects African SMEs to the world with voice-first onboarding, 
             escrow-secured payments, and AI-powered deal matching in local languages.
           </p>
           
           <div ref={heroButtonsRef} className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center opacity-0">
-            <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl group relative overflow-hidden" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdzWfp9ds_YE7-8N4HNVQV5cc8ZRpaZJT7UWgdJ5NCbLjotHw/viewform?usp=pp_url', '_blank')}>
+            <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl group relative overflow-hidden backdrop-blur-sm" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdzWfp9ds_YE7-8N4HNVQV5cc8ZRpaZJT7UWgdJ5NCbLjotHw/viewform?usp=pp_url', '_blank')}>
               <span className="relative z-10 flex items-center justify-center">
                 Join Waitlist 
                 <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
             </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto bg-transparent border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 group" onClick={() => window.open('https://youtu.be/ddUETvq81ow', '_blank')}>
+            <Button size="lg" variant="outline" className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-2 border-blue-400/50 text-white hover:bg-blue-500 hover:text-white hover:border-blue-500 font-semibold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 group" onClick={() => window.open('https://youtu.be/ddUETvq81ow', '_blank')}>
               <div className="flex items-center justify-center">
                 Watch Demo
                 <div className="ml-2 w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
               </div>
             </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto bg-transparent border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 group">
+            <Button size="lg" variant="outline" className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-2 border-green-400/50 text-white hover:bg-green-500 hover:text-white hover:border-green-500 font-semibold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 group">
               <div className="flex items-center justify-center">
                 <Download className="mr-2 h-4 w-4 md:h-5 md:w-5 group-hover:animate-pulse" />
                 Install App
