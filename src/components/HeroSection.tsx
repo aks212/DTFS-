@@ -110,7 +110,17 @@ const HeroSection = () => {
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-7xl mx-auto">
           <div className="mb-4 sm:mb-6 md:mb-8 flex justify-center">
-            <div className="relative group"></div>
+            <div className="relative group">
+              <img
+                src="/lovable-uploads/f34a27cb-bb8a-4f9b-b9dc-6dba44563020.png"
+                alt="DTFS Visa Card"
+                className="w-40 sm:w-48 md:w-56 lg:w-64 h-auto rounded-xl shadow-2xl transform group-hover:scale-105 transition-all duration-500 border border-white/20 backdrop-blur-sm"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -top-2 -right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold shadow-lg animate-pulse">
+                NEW
+              </div>
+            </div>
           </div>
           
           <Badge className="mb-4 sm:mb-6 md:mb-8 bg-blue-500/20 text-blue-400 border-blue-500/30 hover:bg-blue-500/30 transition-all duration-300 text-xs sm:text-sm backdrop-blur-sm">

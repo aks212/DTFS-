@@ -92,7 +92,7 @@ const CardShowcaseSection = () => {
           <div className="relative" ref={cardRef}>
             <div className="relative group">
               <img
-                src="/lovable-uploads/f1d000ba-02cb-490b-945b-e969836139ac.png"
+                src="/lovable-uploads/f34a27cb-bb8a-4f9b-b9dc-6dba44563020.png"
                 alt="DTFS Visa Card"
                 className="w-full max-w-lg mx-auto rounded-2xl shadow-2xl group-hover:shadow-sand-gold-500/20 transition-all duration-500 transform group-hover:scale-105"
               />
