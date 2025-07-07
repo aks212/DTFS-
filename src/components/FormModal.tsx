@@ -10,9 +10,9 @@ interface FormModalProps {
 const FormModal = ({ isOpen, onClose }: FormModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl w-full h-[80vh] p-0 overflow-hidden">
-        <DialogHeader className="p-6 pb-0">
-          <DialogTitle className="text-xl font-bold">Join DTFS Waitlist</DialogTitle>
+      <DialogContent className="max-w-xs sm:max-w-2xl md:max-w-4xl w-full h-[60vh] sm:h-[70vh] md:h-[80vh] p-0 overflow-hidden">
+        <DialogHeader className="p-4 sm:p-6 pb-0">
+          <DialogTitle className="text-lg sm:text-xl font-bold">Join DTFS Waitlist</DialogTitle>
         </DialogHeader>
         <div className="flex-1 overflow-hidden">
           <iframe
