@@ -5,6 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import CardShowcaseSection from '@/components/CardShowcaseSection';
+import CardCarousel from '@/components/CardCarousel';
 import TradeTimeline from '@/components/TradeTimeline';
 import LlamaAISection from '@/components/LlamaAISection';
 import StatsSection from '@/components/StatsSection';
@@ -20,6 +21,7 @@ const Index = () => {
       <Header />
       <FloatingSocialIcons />
       <HeroSection />
+      <CardCarousel />
       <AboutSection />
       <FeaturesSection />
       <CardShowcaseSection />
