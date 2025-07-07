@@ -54,7 +54,7 @@
 
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1e3a8a 100%);
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 25%, #4338ca 50%, #f59e0b 75%, #1e1b4b 100%);
     min-height: 100vh;
   }
 

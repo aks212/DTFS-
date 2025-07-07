@@ -79,11 +79,11 @@ const HeroSection = () => {
           </video>
         </div>
         
-        {/* Enhanced overlay with blue theme and shipping pattern */}
+        {/* Enhanced overlay with rich gradient theme */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-background/85 to-blue-800/80"></div>
-          <div className="absolute inset-0 bg-africa-pattern opacity-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-deep-indigo-800/90 via-background/90 to-sand-gold-900/20"></div>
+          <div className="absolute inset-0 bg-africa-pattern opacity-15"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-background/30"></div>
         </div>
         
         {/* Floating Trade Icons */}
@@ -96,10 +96,11 @@ const HeroSection = () => {
           <Sparkles className="floating-icon absolute top-3/4 right-1/6 h-3 sm:h-5 md:h-6 w-3 sm:w-5 md:w-6 text-blue-500" />
         </div>
         
-        {/* Large Card Background */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        {/* Large Card Background with enhanced styling */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
           <div className="relative">
-            <img src="/lovable-uploads/f34a27cb-bb8a-4f9b-b9dc-6dba44563020.png" alt="DTFS Visa Card Background" className="w-[800px] md:w-[1000px] lg:w-[1200px] xl:w-[1400px] h-auto opacity-15 transform rotate-12 scale-110" />
+            <img src="/lovable-uploads/f34a27cb-bb8a-4f9b-b9dc-6dba44563020.png" alt="DTFS Visa Card Background" className="w-[900px] md:w-[1100px] lg:w-[1300px] xl:w-[1500px] h-auto opacity-20 transform rotate-12 scale-125 filter blur-[1px]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-sand-gold-500/10 via-transparent to-deep-indigo-500/10 transform rotate-12 scale-125"></div>
           </div>
         </div>
 
@@ -111,9 +112,9 @@ const HeroSection = () => {
           
           <h1 ref={heroTitleRef} className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight opacity-0 text-white drop-shadow-2xl">
             Africa's First{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent relative">
+            <span className="bg-gradient-to-r from-sand-gold-400 via-sand-gold-500 to-sand-gold-600 bg-clip-text text-transparent relative">
               AI-Powered
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-blue-400/20 blur-xl rounded-lg"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-sand-gold-500/30 to-sand-gold-400/30 blur-xl rounded-lg"></div>
             </span>
             <br />
             Digital Trade Operating System
@@ -125,20 +126,20 @@ const HeroSection = () => {
           </p>
           
           <div ref={heroButtonsRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center opacity-0 px-4">
-            <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-4 sm:px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl group relative overflow-hidden backdrop-blur-sm text-sm sm:text-base" onClick={() => setIsFormModalOpen(true)}>
+            <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-sand-gold-500 to-sand-gold-600 hover:from-sand-gold-600 hover:to-sand-gold-700 text-white font-semibold py-4 px-6 sm:px-8 md:px-10 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-sand-gold-500/25 group relative overflow-hidden backdrop-blur-sm text-sm sm:text-base" onClick={() => setIsFormModalOpen(true)}>
               <span className="relative z-10 flex items-center justify-center">
                 Join Waitlist 
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-sand-gold-600 to-sand-gold-700 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
             </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-2 border-blue-400/50 text-white hover:bg-blue-500 hover:text-white hover:border-blue-500 font-semibold py-3 px-4 sm:px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 group text-sm sm:text-base" onClick={() => setIsVideoModalOpen(true)}>
+            <Button size="lg" variant="outline" className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-2 border-deep-indigo-400/60 text-white hover:bg-deep-indigo-500 hover:text-white hover:border-deep-indigo-500 font-semibold py-4 px-6 sm:px-8 md:px-10 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl group text-sm sm:text-base" onClick={() => setIsVideoModalOpen(true)}>
               <div className="flex items-center justify-center">
                 Watch Demo
                 <div className="ml-2 w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
               </div>
             </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-2 border-green-400/50 text-white hover:bg-green-500 hover:text-white hover:border-green-500 font-semibold py-3 px-4 sm:px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 group text-sm sm:text-base">
+            <Button size="lg" variant="outline" className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-2 border-emerald-green-400/60 text-white hover:bg-emerald-green-500 hover:text-white hover:border-emerald-green-500 font-semibold py-4 px-6 sm:px-8 md:px-10 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl group text-sm sm:text-base">
               <div className="flex items-center justify-center">
                 <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:animate-pulse" />
                 Install App
