@@ -1,17 +1,13 @@
-
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { CreditCard, Shield, Zap, Globe, Star, CheckCircle } from 'lucide-react';
-
 gsap.registerPlugin(ScrollTrigger);
-
 const CardShowcaseSection = () => {
   const sectionRef = useRef(null);
   const cardRef = useRef(null);
-
   useEffect(() => {
     ScrollTrigger.create({
       trigger: sectionRef.current,
@@ -28,7 +24,6 @@ const CardShowcaseSection = () => {
           duration: 1,
           ease: 'power2.out'
         });
-
         gsap.fromTo('.card-feature', {
           opacity: 0,
           y: 40
@@ -42,37 +37,28 @@ const CardShowcaseSection = () => {
         });
       }
     });
-
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
-
-  const cardFeatures = [
-    {
-      icon: CreditCard,
-      title: "Multi-Currency Support",
-      description: "Accept payments in USDC, USDT, and local African currencies"
-    },
-    {
-      icon: Shield,
-      title: "Blockchain Security",
-      description: "Protected by smart contract escrow and advanced encryption"
-    },
-    {
-      icon: Zap,
-      title: "Instant Settlements",
-      description: "Real-time transaction processing and immediate fund availability"
-    },
-    {
-      icon: Globe,
-      title: "Global Acceptance",
-      description: "Use anywhere Visa is accepted worldwide"
-    }
-  ];
-
-  return (
-    <section ref={sectionRef} className="py-16 md:py-32 bg-gradient-to-b from-muted/20 to-background">
+  const cardFeatures = [{
+    icon: CreditCard,
+    title: "Multi-Currency Support",
+    description: "Accept payments in USDC, USDT, and local African currencies"
+  }, {
+    icon: Shield,
+    title: "Blockchain Security",
+    description: "Protected by smart contract escrow and advanced encryption"
+  }, {
+    icon: Zap,
+    title: "Instant Settlements",
+    description: "Real-time transaction processing and immediate fund availability"
+  }, {
+    icon: Globe,
+    title: "Global Acceptance",
+    description: "Use anywhere Visa is accepted worldwide"
+  }];
+  return <section ref={sectionRef} className="py-16 md:py-32 bg-gradient-to-b from-muted/20 to-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12 md:mb-20">
           <Badge className="mb-4 md:mb-6 bg-sand-gold-500/20 text-sand-gold-400 border-sand-gold-500/30 text-xs md:text-sm">
@@ -91,28 +77,18 @@ const CardShowcaseSection = () => {
           {/* Card Display */}
           <div className="relative" ref={cardRef}>
             <div className="relative group">
-              <img
-                src="/lovable-uploads/f34a27cb-bb8a-4f9b-b9dc-6dba44563020.png"
-                alt="DTFS Visa Card"
-                className="w-full max-w-lg mx-auto rounded-2xl shadow-2xl group-hover:shadow-sand-gold-500/20 transition-all duration-500 transform group-hover:scale-105"
-              />
+              <img src="/lovable-uploads/f34a27cb-bb8a-4f9b-b9dc-6dba44563020.png" alt="DTFS Visa Card" className="w-full max-w-lg mx-auto rounded-2xl shadow-2xl group-hover:shadow-sand-gold-500/20 transition-all duration-500 transform group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-r from-sand-gold-400/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
             
             {/* Floating badges */}
-            <div className="absolute -top-4 -right-4 bg-emerald-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-              <CheckCircle className="h-4 w-4 inline mr-2" />
-              Verified
-            </div>
-            <div className="absolute -bottom-4 -left-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-              Visa Powered
-            </div>
+            
+            
           </div>
 
           {/* Features List */}
           <div className="space-y-6 md:space-y-8">
-            {cardFeatures.map((feature, index) => (
-              <Card key={index} className="card-feature group bg-card/50 backdrop-blur-sm border-border/50 hover:border-sand-gold-500/50 transition-all duration-300">
+            {cardFeatures.map((feature, index) => <Card key={index} className="card-feature group bg-card/50 backdrop-blur-sm border-border/50 hover:border-sand-gold-500/50 transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-sand-gold-400 to-sand-gold-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -128,8 +104,7 @@ const CardShowcaseSection = () => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
             
             <div className="mt-8 p-6 bg-gradient-to-r from-sand-gold-500/10 to-sand-gold-600/10 rounded-xl border border-sand-gold-500/20">
               <h4 className="text-lg font-semibold mb-2 text-sand-gold-400">Partnership with Afreximbank & PAPSS</h4>
@@ -140,8 +115,6 @@ const CardShowcaseSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CardShowcaseSection;
