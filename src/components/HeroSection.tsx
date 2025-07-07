@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { Button } from '@/components/ui/button';
@@ -6,7 +5,6 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Globe, Shield, Zap, MessageSquare, FileText, Sparkles, Download } from 'lucide-react';
 import VideoModal from './VideoModal';
 import FormModal from './FormModal';
-
 const HeroSection = () => {
   const heroTitleRef = useRef(null);
   const heroSubtitleRef = useRef(null);
@@ -14,7 +12,6 @@ const HeroSection = () => {
   const floatingIconsRef = useRef(null);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isFormModalOpen, setIsFormModalOpen] = useState(false);
-
   useEffect(() => {
     // Hero animations with improved timing
     const tl = gsap.timeline({
@@ -72,19 +69,11 @@ const HeroSection = () => {
       stagger: 0.5
     });
   }, []);
-
-  return (
-    <>
+  return <>
       <section className="relative min-h-screen flex items-center justify-center pt-16 sm:pt-20 overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 w-full h-full">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          >
+          <video autoPlay loop muted playsInline className="w-full h-full object-cover">
             <source src="https://videos.pexels.com/video-files/6774244/6774244-uhd_2560_1440_25fps.mp4" type="video/mp4" />
             <div className="w-full h-full bg-gradient-to-br from-blue-900 via-background to-blue-800"></div>
           </video>
@@ -110,11 +99,7 @@ const HeroSection = () => {
         {/* Large Card Background */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="relative">
-            <img
-              src="/lovable-uploads/f34a27cb-bb8a-4f9b-b9dc-6dba44563020.png"
-              alt="DTFS Visa Card Background"
-              className="w-[800px] md:w-[1000px] lg:w-[1200px] xl:w-[1400px] h-auto opacity-15 transform rotate-12 scale-110"
-            />
+            <img src="/lovable-uploads/f34a27cb-bb8a-4f9b-b9dc-6dba44563020.png" alt="DTFS Visa Card Background" className="w-[800px] md:w-[1000px] lg:w-[1200px] xl:w-[1400px] h-auto opacity-15 transform rotate-12 scale-110" />
           </div>
         </div>
 
@@ -122,11 +107,7 @@ const HeroSection = () => {
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-7xl mx-auto">
           <div className="mb-4 sm:mb-6 md:mb-8 flex justify-center">
             <div className="relative group">
-              <img
-                src="/lovable-uploads/f34a27cb-bb8a-4f9b-b9dc-6dba44563020.png"
-                alt="DTFS Visa Card"
-                className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto rounded-xl shadow-2xl transform group-hover:scale-105 transition-all duration-500 border border-white/20 backdrop-blur-sm"
-              />
+              <img src="/lovable-uploads/f34a27cb-bb8a-4f9b-b9dc-6dba44563020.png" alt="DTFS Visa Card" className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto rounded-xl shadow-2xl transform group-hover:scale-105 transition-all duration-500 border border-white/20 backdrop-blur-sm" />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute -top-2 -right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold shadow-lg animate-pulse">
                 NEW
@@ -134,10 +115,7 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <Badge className="mb-4 sm:mb-6 md:mb-8 bg-blue-500/20 text-blue-400 border-blue-500/30 hover:bg-blue-500/30 transition-all duration-300 text-xs sm:text-sm backdrop-blur-sm">
-            <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
-            Powered by Llama AI & Blockchain
-          </Badge>
+          
           
           <h1 ref={heroTitleRef} className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight opacity-0 text-white drop-shadow-2xl">
             Africa's First{' '}
@@ -181,8 +159,6 @@ const HeroSection = () => {
       {/* Modals */}
       <VideoModal isOpen={isVideoModalOpen} onClose={() => setIsVideoModalOpen(false)} />
       <FormModal isOpen={isFormModalOpen} onClose={() => setIsFormModalOpen(false)} />
-    </>
-  );
+    </>;
 };
-
 export default HeroSection;
