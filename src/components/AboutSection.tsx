@@ -1,139 +1,101 @@
-
 import React from 'react';
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent } from '@/components/ui/card';
-import { Heart, Target, Rocket, Shield, Brain, Award, Globe, Users } from 'lucide-react';
+import { Target, Rocket, Globe, Users, Award } from 'lucide-react';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-16 md:py-32 bg-gradient-to-b from-background to-muted/20">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12 md:mb-20">
-          <Badge className="mb-4 md:mb-6 bg-blue-500/20 text-blue-400 border-blue-500/30 text-xs md:text-sm">
-            <Heart className="h-3 w-3 md:h-4 md:w-4 mr-2" />
-            About DTFS
-          </Badge>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8">
-            Empowering <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">African Trade</span>
+    <section id="about" className="section-padding bg-background relative">
+      <div className="absolute inset-0 grid-pattern"></div>
+      <div className="container mx-auto px-4 md:px-6 relative">
+        <div className="text-center mb-16 md:mb-24">
+          <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold mb-4">About DTFS</p>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight">
+            Democratizing Global Trade<br />
+            <span className="text-muted-foreground">for African Entrepreneurs</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            DTFS is more than a platform—it's a movement to democratize global trade for African entrepreneurs and connect them with opportunities worldwide.
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            DTFS is more than a platform — it's the infrastructure layer enabling every African SME 
+            to participate in global commerce with confidence and speed.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center max-w-7xl mx-auto mb-16 md:mb-24">
-          {/* Mission */}
+        <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-start max-w-6xl mx-auto mb-24">
           <div>
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 md:mb-8">
-              <Target className="h-8 w-8 md:h-10 md:w-10 text-white" />
+            <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-6">
+              <Target className="h-6 w-6 text-gold" />
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Our Mission</h3>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
-              To break down barriers in global trade by providing African SMEs with cutting-edge AI technology, 
+            <h3 className="text-2xl md:text-3xl font-display font-bold mb-4 tracking-tight">Our Mission</h3>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              To break down barriers in global trade by providing African SMEs with cutting-edge AI, 
               secure payment systems, and multilingual support that makes international commerce accessible to everyone.
             </p>
-            <ul className="space-y-3 text-sm md:text-base text-muted-foreground">
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-                Bridge the digital divide in African trade
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-                Enable voice-first interactions in local languages
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-                Provide secure, blockchain-based payment solutions
-              </li>
+            <ul className="space-y-4">
+              {[
+                'Bridge the digital divide in African trade',
+                'Enable voice-first interactions in local languages',
+                'Provide secure, blockchain-based payment solutions',
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                  <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Vision */}
           <div>
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mb-6 md:mb-8">
-              <Rocket className="h-8 w-8 md:h-10 md:w-10 text-white" />
+            <div className="w-12 h-12 rounded-xl bg-emerald/10 flex items-center justify-center mb-6">
+              <Rocket className="h-6 w-6 text-emerald" />
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Our Vision</h3>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
+            <h3 className="text-2xl md:text-3xl font-display font-bold mb-4 tracking-tight">Our Vision</h3>
+            <p className="text-muted-foreground leading-relaxed mb-8">
               A future where every African entrepreneur can participate in global trade seamlessly, 
               supported by AI that understands their language, culture, and business needs.
             </p>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="bg-blue-500/10 rounded-xl p-4">
-                <div className="text-2xl md:text-3xl font-bold text-blue-500 mb-2">500K+</div>
-                <div className="text-xs md:text-sm text-muted-foreground">SMEs to empower</div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="p-5 rounded-xl border border-border bg-card">
+                <div className="text-2xl md:text-3xl font-display font-bold text-gold mb-1">500K+</div>
+                <div className="text-xs text-muted-foreground">SMEs to empower</div>
               </div>
-              <div className="bg-blue-500/10 rounded-xl p-4">
-                <div className="text-2xl md:text-3xl font-bold text-blue-500 mb-2">$500M</div>
-                <div className="text-xs md:text-sm text-muted-foreground">Trade volume goal</div>
+              <div className="p-5 rounded-xl border border-border bg-card">
+                <div className="text-2xl md:text-3xl font-display font-bold text-gold mb-1">$500M</div>
+                <div className="text-xs text-muted-foreground">Trade volume goal</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Values */}
-        <div className="text-center mb-12 md:mb-16">
-          <h3 className="text-2xl md:text-4xl font-bold mb-8 md:mb-12">Our Core Values</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {[
-              {
-                icon: Heart,
-                title: "Inclusivity",
-                description: "Making trade accessible for everyone, regardless of language or location",
-                color: "from-blue-500 to-blue-600"
-              },
-              {
-                icon: Shield,
-                title: "Trust",
-                description: "Building secure, transparent systems that protect all parties",
-                color: "from-blue-600 to-blue-700"
-              },
-              {
-                icon: Brain,
-                title: "Innovation",
-                description: "Leveraging cutting-edge AI to solve real-world problems",
-                color: "from-blue-400 to-blue-500"
-              },
-              {
-                icon: Award,
-                title: "Excellence",
-                description: "Delivering world-class solutions with attention to detail",
-                color: "from-blue-500 to-blue-600"
-              }
-            ].map((value, index) => (
-              <Card key={index} className="group bg-card/50 backdrop-blur-sm border-border/50 hover:border-blue-500/30 transition-all duration-500">
-                <CardContent className="p-6 text-center">
-                  <div className={`w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 bg-gradient-to-r ${value.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <value.icon className="h-6 w-6 md:h-8 md:w-8 text-white" />
-                  </div>
-                  <h4 className="text-lg md:text-xl font-semibold mb-3">{value.title}</h4>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
+          {[
+            { title: 'Inclusivity', desc: 'Trade accessible for everyone, regardless of language or location' },
+            { title: 'Trust', desc: 'Secure, transparent systems that protect all parties involved' },
+            { title: 'Innovation', desc: 'Cutting-edge AI solving real-world trade challenges' },
+            { title: 'Excellence', desc: 'World-class solutions with obsessive attention to detail' },
+          ].map((value, i) => (
+            <div key={i} className="p-6 rounded-2xl border border-border bg-card/50 hover:border-gold/20 transition-all duration-300 group">
+              <h4 className="text-lg font-display font-semibold mb-2 group-hover:text-gold transition-colors duration-300">{value.title}</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">{value.desc}</p>
+            </div>
+          ))}
         </div>
 
-        {/* Team/Company Info */}
-        <div className="bg-gradient-to-br from-blue-900/20 to-blue-800/20 rounded-3xl p-8 md:p-12 text-center">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Built by African Tech Leaders</h3>
-          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-6 md:mb-8">
-            Our team combines deep understanding of African markets with world-class technical expertise. 
-            We're passionate about creating solutions that truly serve our communities.
+        {/* Team */}
+        <div className="rounded-2xl border border-border bg-card/50 p-8 md:p-12 text-center max-w-4xl mx-auto">
+          <h3 className="text-xl md:text-2xl font-display font-bold mb-4">Built by African Tech Leaders</h3>
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
+            Deep understanding of African markets combined with world-class technical expertise.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base">
-            <div className="flex items-center gap-2">
-              <Globe className="h-4 w-4 md:h-5 md:w-5 text-blue-500" />
-              <span>Based in Kano, Nigeria</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Users className="h-4 w-4 md:h-5 md:w-5 text-blue-500" />
-              <span>15+ Team Members</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Award className="h-4 w-4 md:h-5 md:w-5 text-blue-500" />
-              <span>AFCTA Backed</span>
-            </div>
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
+            {[
+              { icon: Globe, text: 'Based in Kano, Nigeria' },
+              { icon: Users, text: '15+ Team Members' },
+              { icon: Award, text: 'AfCFTA Backed' },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <item.icon className="h-4 w-4 text-gold" />
+                <span>{item.text}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

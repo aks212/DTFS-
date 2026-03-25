@@ -1,59 +1,82 @@
-
 import React from 'react';
+import { Globe, Users, Award } from 'lucide-react';
 
 const FooterSection = () => {
+  const links = {
+    Platform: [
+      { name: 'Features', href: '#features' },
+      { name: 'Pricing', href: '#' },
+      { name: 'API', href: '#' },
+      { name: 'Documentation', href: '#' },
+    ],
+    Company: [
+      { name: 'About', href: '#about' },
+      { name: 'Whitepaper', href: '#' },
+      { name: 'Careers', href: '#' },
+      { name: 'Press', href: '#' },
+    ],
+    Legal: [
+      { name: 'Privacy Policy', href: '#' },
+      { name: 'Terms of Service', href: '#' },
+      { name: 'Security', href: '#' },
+      { name: 'Compliance', href: '#' },
+    ],
+  };
+
   return (
-    <footer className="py-12 md:py-16 bg-background border-t border-border/50">
+    <footer className="border-t border-border bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
-          <div>
-            <div className="mb-4 md:mb-6">
-              <img src="/lovable-uploads/4e8c8711-f992-40c7-a9a1-7878a364990b.png" alt="DTFS Logo" className="h-10 md:h-12 w-auto" />
+        <div className="py-16 md:py-20 grid sm:grid-cols-2 lg:grid-cols-5 gap-10 md:gap-12">
+          {/* Brand */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-2.5 mb-4">
+              <img src="/lovable-uploads/4e8c8711-f992-40c7-a9a1-7878a364990b.png" alt="DTFS Logo" className="h-8 w-auto" />
+              <span className="text-lg font-display font-bold">DTFS</span>
             </div>
-            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-              Connecting African trade to the world through AI-powered innovation.
+            <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-xs">
+              The operating system for African trade. AI-powered, blockchain-secured, multilingual.
             </p>
+            <div className="flex gap-4 text-xs text-muted-foreground">
+              {[
+                { icon: Globe, text: 'Kano, Nigeria' },
+                { icon: Users, text: '15+ Team' },
+                { icon: Award, text: 'AfCFTA Backed' },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-1">
+                  <item.icon className="h-3 w-3 text-gold" />
+                  <span>{item.text}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <div>
-            <h4 className="font-semibold mb-3 md:mb-4 text-base md:text-lg">Platform</h4>
-            <ul className="space-y-2 md:space-y-3 text-sm md:text-base text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors duration-300">Features</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors duration-300">Pricing</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors duration-300">API</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-3 md:mb-4 text-base md:text-lg">Company</h4>
-            <ul className="space-y-2 md:space-y-3 text-sm md:text-base text-muted-foreground">
-              <li><a href="#about" className="hover:text-foreground transition-colors duration-300">About</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors duration-300">Whitepaper</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors duration-300">Careers</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-3 md:mb-4 text-base md:text-lg">Legal</h4>
-            <ul className="space-y-2 md:space-y-3 text-sm md:text-base text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors duration-300">Privacy</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors duration-300">Terms</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors duration-300">Security</a></li>
-            </ul>
-          </div>
+
+          {/* Links */}
+          {Object.entries(links).map(([title, items]) => (
+            <div key={title}>
+              <h4 className="text-sm font-display font-semibold mb-4">{title}</h4>
+              <ul className="space-y-3">
+                {items.map((item) => (
+                  <li key={item.name}>
+                    <a href={item.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-        
-        <div className="border-t border-border/50 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm md:text-base text-muted-foreground text-center md:text-left">
+
+        <div className="border-t border-border py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-muted-foreground">
             © 2025 Nexus X Industries Ltd. All rights reserved.
           </p>
-          <div className="flex space-x-6 md:space-x-8">
-            <a href="#" className="text-sm md:text-base text-muted-foreground hover:text-blue-500 transition-colors duration-300">
-              LinkedIn
-            </a>
-            <a href="#" className="text-sm md:text-base text-muted-foreground hover:text-blue-500 transition-colors duration-300">
-              Twitter
-            </a>
-            <a href="#" className="text-sm md:text-base text-muted-foreground hover:text-blue-500 transition-colors duration-300">
-              YouTube
-            </a>
+          <div className="flex gap-6">
+            {['LinkedIn', 'Twitter', 'YouTube'].map((name) => (
+              <a key={name} href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-200">
+                {name}
+              </a>
+            ))}
           </div>
         </div>
       </div>
