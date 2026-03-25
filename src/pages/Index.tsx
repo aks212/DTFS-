@@ -1,7 +1,7 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import TrustBar from '@/components/TrustBar';
 import AboutSection from '@/components/AboutSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import CardShowcaseSection from '@/components/CardShowcaseSection';
@@ -21,6 +21,7 @@ const Index = () => {
       <Header />
       <FloatingSocialIcons />
       <HeroSection />
+      <TrustBar />
       <CardCarousel />
       <AboutSection />
       <FeaturesSection />
