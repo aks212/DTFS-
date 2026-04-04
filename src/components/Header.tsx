@@ -41,11 +41,6 @@ const Header = () => {
                 alt="DTFS Logo"
                 className="h-8 sm:h-9 md:h-10 w-auto transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="hidden xs:block">
-                <span className="text-base sm:text-lg font-display font-bold text-foreground tracking-tight">
-                  DTFS
-                </span>
-              </div>
             </a>
 
             {/* Desktop Navigation */}
