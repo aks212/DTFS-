@@ -30,7 +30,7 @@ const FooterSection = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
-              <img src="/lovable-uploads/4e8c8711-f992-40c7-a9a1-7878a364990b.png" alt="DTFS Logo" className="h-8 w-auto" />
+              <img src="/images/dtfs-logo.png" alt="DTFS Logo" className="h-8 w-auto" />
               <span className="text-lg font-display font-bold">DTFS</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-xs">

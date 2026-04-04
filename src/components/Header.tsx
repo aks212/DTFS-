@@ -37,7 +37,7 @@ const Header = () => {
             {/* Logo */}
             <a href="#" className="flex items-center gap-2.5 group">
               <img
-                src="/lovable-uploads/4e8c8711-f992-40c7-a9a1-7878a364990b.png"
+                src="/images/dtfs-logo.png"
                 alt="DTFS Logo"
                 className="h-8 sm:h-9 md:h-10 w-auto transition-transform duration-300 group-hover:scale-105"
               />
