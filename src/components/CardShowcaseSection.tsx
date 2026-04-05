@@ -23,10 +23,10 @@ const CardShowcaseSection = () => {
   }, []);
 
   const cardFeatures = [
-    { icon: CreditCard, title: 'Multi-Currency Support', description: 'Accept payments in USDC, USDT, and local African currencies' },
-    { icon: Shield, title: 'Blockchain Security', description: 'Protected by smart contract escrow and advanced encryption' },
-    { icon: Zap, title: 'Instant Settlements', description: 'Real-time transaction processing and immediate fund availability' },
-    { icon: Globe, title: 'Global Acceptance', description: 'Use anywhere Visa is accepted worldwide' },
+    { icon: CreditCard, title: 'Multi-Currency Support', description: 'Multi-currency support across global and local payment rails' },
+    { icon: Shield, title: 'Secure Transactions', description: 'Secure, transparent transaction flows with escrow protection' },
+    { icon: Zap, title: 'Faster Settlements', description: 'Faster settlement cycles reducing delays from weeks to minutes' },
+    { icon: Globe, title: 'Global Interoperability', description: 'Designed for interoperability with global financial systems' },
   ];
 
   return (
@@ -36,13 +36,13 @@ const CardShowcaseSection = () => {
         <div className="text-center mb-16 md:mb-24">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold mb-4">
             <Star className="h-3 w-3 inline mr-1.5 fill-current" />
-            Premium Banking
+            Financial Infrastructure
           </p>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight">
             Your <span className="text-gradient">DTFS Visa Card</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Seamless African trade finance powered by blockchain technology
+            Simplifying cross-border payments and settlement for SMEs
           </p>
         </div>
 
@@ -76,9 +76,9 @@ const CardShowcaseSection = () => {
             ))}
 
             <div className="mt-6 p-5 rounded-xl border border-gold/20 bg-gold/5">
-              <h4 className="text-sm font-display font-semibold mb-1 text-gold">Partnership with Afreximbank & PAPSS</h4>
+              <h4 className="text-sm font-display font-semibold mb-1 text-gold">Regional & Global Integration</h4>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Backed by the African Export-Import Bank and powered by the Pan-African Payment and Settlement System.
+                Designed to integrate with regional and global financial infrastructure providers including Afreximbank and PAPSS.
               </p>
             </div>
           </div>

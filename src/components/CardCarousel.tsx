@@ -5,24 +5,24 @@ import { CreditCard, Shield, Zap, Globe, Users, TrendingUp, CheckCircle } from '
 
 const CardCarousel = () => {
   const features = [
-    { icon: CreditCard, title: 'Multi-Currency', description: 'Accept payments in USDC, USDT, and local African currencies with real-time conversion.', badge: 'Payment' },
-    { icon: Shield, title: 'Blockchain Security', description: 'Smart contract escrow and advanced encryption for maximum transaction safety.', badge: 'Security' },
-    { icon: Zap, title: 'Instant Settlements', description: 'Real-time processing with immediate fund availability across all currencies.', badge: 'Speed' },
-    { icon: Globe, title: 'Global Acceptance', description: 'Use anywhere Visa is accepted with seamless international transaction support.', badge: 'Global' },
-    { icon: Users, title: 'SME Focused', description: 'Designed specifically for African SMEs with tailored business solutions.', badge: 'Business' },
-    { icon: TrendingUp, title: 'AI Analytics', description: 'Insights into spending patterns and business growth with advanced AI.', badge: 'Analytics' },
+    { icon: CreditCard, title: 'Multi-Currency Payments', description: 'Enable seamless transactions across stablecoins and local currencies with real-time FX visibility.', badge: 'Payment' },
+    { icon: Shield, title: 'Secure Transaction Infrastructure', description: 'Smart contract–enabled escrow ensures transparency and trust across trade partners.', badge: 'Security' },
+    { icon: Zap, title: 'Fast Settlement', description: 'Reduce settlement timelines from weeks to minutes through digital coordination.', badge: 'Speed' },
+    { icon: Globe, title: 'Global Interoperability', description: 'Designed to support cross-border trade across multiple markets and systems.', badge: 'Global' },
+    { icon: Users, title: 'SME-Centric Design', description: 'Built specifically for small and medium-sized enterprises navigating global trade.', badge: 'Business' },
+    { icon: TrendingUp, title: 'Data & Insights', description: 'Actionable insights to improve trade performance and decision-making.', badge: 'Analytics' },
   ];
 
   return (
     <section className="py-16 md:py-24 bg-background border-y border-border/50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12 md:mb-16">
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold mb-4">Card Features</p>
+          <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold mb-4">Capabilities</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 tracking-tight">
-            Powerful Features for <span className="text-gradient">Modern Trade</span>
+            Core Capabilities for <span className="text-gradient">Modern Trade Execution</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Cutting-edge features designed for your success
+            Infrastructure designed to simplify cross-border trade in emerging markets
           </p>
         </div>
 

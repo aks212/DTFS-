@@ -63,15 +63,14 @@ const HeroSection = () => {
             <span className="text-foreground">The Operating System</span>
             <br />
             <span className="text-foreground">for </span>
-            <span className="text-gradient">African Trade</span>
+            <span className="text-gradient">Emerging Market Trade</span>
           </h1>
 
           <p
             ref={heroSubtitleRef}
             className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed opacity-0"
           >
-            AI-powered voice onboarding, escrow-secured payments, and intelligent 
-            deal matching — all in your local language.
+            A unified digital platform that simplifies documentation, compliance, logistics, and payments—enabling SMEs to participate in global trade efficiently, starting with Africa and scaling worldwide.
           </p>
 
           <div ref={heroButtonsRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center opacity-0">

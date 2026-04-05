@@ -13,18 +13,18 @@ interface Message {
 const MiniChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { id: 1, text: "Hello! I'm your DTFS AI assistant. Ask me anything about digital trade in Africa! 🌍", isBot: true }
+    { id: 1, text: "Welcome to DTFS. I can help you understand our digital trade facilitation platform. What would you like to know?", isBot: true }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const demoResponses = [
-    "DTFS helps African SMEs export to global markets with AI-powered voice guidance in local languages. Our platform reduces trade costs by up to 90%! 🚀",
-    "Our platform uses smart contracts for secure escrow payments and supports stablecoins and local currencies. 🔒",
-    "The AI Trade Assistant generates export documents, matches buyers with sellers, and provides multilingual support. 📱",
-    "DTFS aims to onboard 500,000+ SMEs and facilitate $500M in trade volume by 2026. 🌟",
-    "Traditional trade takes 4-8 weeks. With DTFS, it's 5-10 minutes. Time is money! ⏰"
+    "DTFS is a digital trade facilitation platform that simplifies cross-border trade for SMEs. We coordinate documentation, compliance, logistics, and payments into a single workflow.",
+    "Our platform uses smart contract–enabled escrow to ensure transparent, secure transactions across trade partners.",
+    "DTFS supports guided trade workflows, automated documentation, and multilingual interfaces to reduce barriers for SMEs in emerging markets.",
+    "We target onboarding 500,000+ SMEs and enabling $500M+ in trade volume across emerging markets.",
+    "Traditional cross-border trade takes 4-8 weeks with costs of 10-20%. DTFS reduces this to minutes with less than 1% transaction fees."
   ];
 
   useEffect(() => { messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages]);
@@ -64,7 +64,7 @@ const MiniChatbot = () => {
                   <span className="text-sm font-display font-semibold">DTFS Assistant</span>
                   <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
                     <Sparkles className="h-2.5 w-2.5 text-gold" />
-                    Llama AI
+                    AI-Powered
                   </div>
                 </div>
               </div>

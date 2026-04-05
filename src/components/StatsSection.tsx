@@ -24,10 +24,10 @@ const StatsSection = () => {
   }, []);
 
   const stats = [
-    { number: '500', suffix: 'K+', label: 'SMEs to be onboarded', icon: Users },
-    { number: '500', suffix: 'M', label: 'Trade volume goal by 2026', icon: TrendingUp, prefix: '$' },
-    { number: '1', suffix: 'M+', label: 'AI-generated documents', icon: FileText },
-    { number: '100', suffix: '+', label: 'Global diaspora buyers', icon: Globe },
+    { number: '500', suffix: 'K+', label: 'SMEs targeted for onboarding', icon: Users },
+    { number: '500', suffix: 'M', label: 'Trade volume enabled', icon: TrendingUp, prefix: '$' },
+    { number: '1', suffix: 'M+', label: 'Digital trade documents projected', icon: FileText },
+    { number: '100', suffix: '+', label: 'Global buyers and partners', icon: Globe },
   ];
 
   return (
@@ -36,10 +36,10 @@ const StatsSection = () => {
         <div className="text-center mb-16 md:mb-24">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold mb-4">Impact</p>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight">
-            Our Impact Goals
+            Driving Measurable Trade Impact
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Building the future of African trade, one connection at a time
+            Supporting SME participation in global markets
           </p>
         </div>
 

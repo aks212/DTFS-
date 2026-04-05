@@ -23,12 +23,12 @@ const FeaturesSection = () => {
   }, []);
 
   const features = [
-    { icon: Brain, title: 'AI Trade Assistant', description: 'Voice-first onboarding in local languages with Llama AI for seamless trade setup.' },
-    { icon: Shield, title: 'Smart Contract Escrow', description: 'Blockchain-secured payments with automatic release upon delivery confirmation.' },
-    { icon: CreditCard, title: 'Stablecoin & Local Currency', description: 'Support for USDC, USDT, and African currencies with real-time conversion.' },
-    { icon: FileText, title: 'Trade Document Generator', description: 'AI-powered export forms, invoices, and compliance documentation.' },
-    { icon: Mic, title: 'Multilingual Voice Interface', description: 'Hausa, Yoruba, Igbo, English, French, and Arabic support built in.' },
-    { icon: Users, title: 'Agent Dashboard & USSD', description: 'Offline access via USSD codes ensuring reach in remote areas.' },
+    { icon: Brain, title: 'Guided Trade Workflows', description: 'Step-by-step support for documentation and compliance aligned with destination markets.' },
+    { icon: Shield, title: 'Secure Payment Coordination', description: 'Integrated payment tracking and escrow-enabled transaction security.' },
+    { icon: CreditCard, title: 'Multi-Currency & FX Visibility', description: 'Real-time visibility into exchange rates and cross-border transactions.' },
+    { icon: FileText, title: 'Trade Documentation Engine', description: 'Digitised generation of export documents and compliance requirements.' },
+    { icon: Mic, title: 'Multilingual Interface', description: 'Accessible across multiple languages for broader SME inclusion.' },
+    { icon: Users, title: 'Offline Access & Agent Tools', description: 'USSD and agent-enabled access for low-connectivity environments.' },
   ];
 
   return (
@@ -38,11 +38,11 @@ const FeaturesSection = () => {
         <div className="text-center mb-16 md:mb-24">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold mb-4">Platform</p>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight">
-            Everything You Need<br />
-            <span className="text-muted-foreground">to Trade Globally</span>
+            Everything Required to<br />
+            <span className="text-muted-foreground">Execute Global Trade</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            A comprehensive suite of AI-powered tools built for African trade
+            A coordinated system designed for efficient trade execution
           </p>
         </div>
 
