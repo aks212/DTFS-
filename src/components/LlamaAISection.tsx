@@ -3,10 +3,10 @@ import { Brain, Mic, FileText, MessageSquare, Globe, Layers } from 'lucide-react
 
 const LlamaAISection = () => {
   const items = [
-    { icon: Mic, title: 'Voice Processing', desc: 'Natural language understanding in local dialects' },
-    { icon: FileText, title: 'Document Generation', desc: 'AI-powered export forms and compliance docs' },
-    { icon: MessageSquare, title: 'Smart Matching', desc: 'Semantic search for optimal trade partnerships' },
-    { icon: Globe, title: 'Multilingual Chat', desc: 'Real-time translation and cultural adaptation' },
+    { icon: FileText, title: 'Document Automation', desc: 'Automated generation of trade documents and compliance forms' },
+    { icon: MessageSquare, title: 'Trade Matching', desc: 'Intelligent recommendations connecting buyers and sellers' },
+    { icon: Mic, title: 'Multilingual Support', desc: 'Voice and text interfaces across multiple languages' },
+    { icon: Globe, title: 'Workflow Optimisation', desc: 'Continuous improvement of trade process efficiency' },
   ];
 
   return (
@@ -31,11 +31,10 @@ const LlamaAISection = () => {
           </p>
 
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight">
-            Powered by <span className="text-gradient">Llama AI</span>
+            Intelligent <span className="text-gradient">Trade Enablement</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground mb-16 max-w-2xl mx-auto leading-relaxed">
-            Advanced AI transforms voice commands into trade documents, matches buyers with sellers, 
-            and provides multilingual support across Africa.
+            AI-powered tools support documentation, onboarding, and decision-making—enabling SMEs to navigate complex trade processes with ease.
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

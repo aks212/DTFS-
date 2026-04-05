@@ -19,17 +19,17 @@ const TradeTimeline = () => {
   }, []);
 
   const traditionalSteps = [
-    { icon: FileText, title: 'Manual Documentation', time: '2-4 weeks', description: 'Paper forms, manual verification' },
-    { icon: Clock, title: 'Bank Processing', time: '1-2 weeks', description: 'Letters of credit, wire transfers' },
-    { icon: Shield, title: 'Trust Issues', time: 'Ongoing', description: 'No escrow protection' },
-    { icon: CreditCard, title: 'High FX Costs', time: '5-15% fees', description: 'Multiple currency conversions' },
+    { icon: FileText, title: 'Manual Documentation', time: '2-4 weeks', description: 'Paper-based forms, manual verification processes' },
+    { icon: Clock, title: 'Bank Processing', time: '1-2 weeks', description: 'Letters of credit, fragmented coordination' },
+    { icon: Shield, title: 'Limited Trust Mechanisms', time: 'Ongoing', description: 'No standardised escrow protection' },
+    { icon: CreditCard, title: 'High Transaction Costs', time: '5-15% fees', description: 'Multiple intermediaries, currency conversions' },
   ];
 
   const dtfsSteps = [
-    { icon: Zap, title: 'AI Voice Onboarding', time: '5 min', description: 'Multilingual AI assistance' },
-    { icon: FileText, title: 'Auto Documentation', time: 'Instant', description: 'AI-generated trade docs' },
-    { icon: Shield, title: 'Smart Contract Escrow', time: 'Real-time', description: 'Blockchain-secured payments' },
-    { icon: Globe, title: 'Stablecoin Settlement', time: '<1% fees', description: 'Direct peer-to-peer transfer' },
+    { icon: Zap, title: 'Digital Onboarding', time: '5 min', description: 'Guided multilingual workflow setup' },
+    { icon: FileText, title: 'Automated Documentation', time: 'Instant', description: 'Digitised trade document generation' },
+    { icon: Shield, title: 'Escrow-Secured Payments', time: 'Real-time', description: 'Smart contract–enabled transaction security' },
+    { icon: Globe, title: 'Direct Settlement', time: '<1% fees', description: 'Streamlined cross-border payments' },
   ];
 
   return (
@@ -39,10 +39,10 @@ const TradeTimeline = () => {
         <div className="text-center mb-16 md:mb-24">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold mb-4">Comparison</p>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight">
-            Traditional Trade vs <span className="text-gradient">DTFS</span>
+            From Fragmented Processes to <span className="text-gradient">Coordinated Execution</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            From weeks of bureaucracy to minutes of AI-powered efficiency
+            Reducing trade complexity through digital workflows
           </p>
         </div>
 
@@ -51,7 +51,7 @@ const TradeTimeline = () => {
           <div className="tl-card rounded-2xl border border-destructive/20 bg-destructive/[0.03] p-6 md:p-8">
             <div className="text-center mb-8">
               <h3 className="text-xl font-display font-bold text-destructive mb-1">Traditional Trade</h3>
-              <p className="text-sm text-muted-foreground">Complex, slow, expensive</p>
+              <p className="text-sm text-muted-foreground">Weeks of manual coordination and high costs</p>
             </div>
             <div className="space-y-5">
               {traditionalSteps.map((step, i) => (
@@ -78,7 +78,7 @@ const TradeTimeline = () => {
           <div className="tl-card rounded-2xl border border-emerald/20 bg-emerald/[0.03] p-6 md:p-8">
             <div className="text-center mb-8">
               <h3 className="text-xl font-display font-bold text-emerald mb-1">DTFS Digital Trade</h3>
-              <p className="text-sm text-muted-foreground">Fast, secure, affordable</p>
+              <p className="text-sm text-muted-foreground">Digitised workflows, improved accuracy, reduced costs</p>
             </div>
             <div className="space-y-5">
               {dtfsSteps.map((step, i) => (

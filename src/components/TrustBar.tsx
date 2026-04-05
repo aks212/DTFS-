@@ -2,15 +2,15 @@ import React from 'react';
 
 const TrustBar = () => {
   const partners = [
-    'Afreximbank', 'PAPSS', 'AfCFTA', 'Visa', 'Llama AI', 'Stellar',
-    'Afreximbank', 'PAPSS', 'AfCFTA', 'Visa', 'Llama AI', 'Stellar',
+    'Afreximbank', 'PAPSS', 'AfCFTA', 'Visa', 'AI Infrastructure', 'Blockchain Networks',
+    'Afreximbank', 'PAPSS', 'AfCFTA', 'Visa', 'AI Infrastructure', 'Blockchain Networks',
   ];
 
   return (
     <section className="py-12 md:py-16 border-y border-border/50 bg-secondary/20 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 mb-6">
         <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-          Backed by & Integrated with
+          Aligned with and built for global trade ecosystems
         </p>
       </div>
       <div className="relative">

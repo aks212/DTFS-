@@ -18,11 +18,10 @@ const CTASection = () => {
           <div className="max-w-3xl mx-auto">
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold mb-4">Get Started</p>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight">
-              Join the Future of<br />African Trade
+              Build the Future of<br />Trade with DTFS
             </h2>
             <p className="text-base md:text-lg text-muted-foreground mb-10 leading-relaxed max-w-xl mx-auto">
-              Be among the first to experience AI-powered trade finance. 
-              Early access members get priority onboarding and exclusive features.
+              Join early adopters shaping the next generation of digital trade infrastructure.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-10">

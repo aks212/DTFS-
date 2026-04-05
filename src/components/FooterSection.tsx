@@ -34,13 +34,13 @@ const FooterSection = () => {
               <span className="text-lg font-display font-bold">DTFS</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-xs">
-              The operating system for African trade. AI-powered, blockchain-secured, multilingual.
+              Digital infrastructure for inclusive, transparent, and scalable global trade.
             </p>
             <div className="flex gap-4 text-xs text-muted-foreground">
               {[
-                { icon: Globe, text: 'Kano, Nigeria' },
+                { icon: Globe, text: 'Headquartered in Nigeria' },
                 { icon: Users, text: '15+ Team' },
-                { icon: Award, text: 'AfCFTA Backed' },
+                { icon: Award, text: 'AfCFTA Aligned' },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-1">
                   <item.icon className="h-3 w-3 text-gold" />
@@ -69,7 +69,7 @@ const FooterSection = () => {
 
         <div className="border-t border-border py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground">
-            © 2025 Nexus X Industries Ltd. All rights reserved.
+            © 2025 Nexus X Industries Ltd — Building systems for the future. All rights reserved.
           </p>
           <div className="flex gap-6">
             {['LinkedIn', 'Twitter', 'YouTube'].map((name) => (

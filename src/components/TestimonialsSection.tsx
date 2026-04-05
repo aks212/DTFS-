@@ -4,9 +4,9 @@ import { Star } from 'lucide-react';
 
 const TestimonialsSection = () => {
   const testimonials = [
-    { name: 'Amara Okafor', role: 'Cocoa Exporter, Ghana', content: 'DTFS made it possible for me to export directly to European buyers. The AI helped me complete all paperwork in minutes!', avatar: 'AO' },
-    { name: 'Ibrahim Musa', role: 'Textile Manufacturer, Nigeria', content: 'The voice interface in Hausa was a game-changer. I can manage my exports without complex English forms.', avatar: 'IM' },
-    { name: 'Sarah Chen', role: 'Import Buyer, USA', content: 'Finally found reliable African suppliers through DTFS. The escrow system gives me complete confidence.', avatar: 'SC' },
+    { name: 'Amara Okafor', role: 'Cocoa Exporter, Ghana', content: 'DTFS streamlined our export documentation process significantly. What used to take weeks of paperwork now takes minutes through the platform.', avatar: 'AO' },
+    { name: 'Ibrahim Musa', role: 'Textile Manufacturer, Nigeria', content: 'The multilingual interface made it possible for our team to manage trade processes without language barriers. A practical solution for real trade challenges.', avatar: 'IM' },
+    { name: 'Sarah Chen', role: 'Import Buyer, USA', content: 'The escrow-secured payments gave us confidence to work with new suppliers. Transparent, efficient, and exactly what cross-border trade needs.', avatar: 'SC' },
   ];
 
   return (
@@ -16,10 +16,10 @@ const TestimonialsSection = () => {
         <div className="text-center mb-16 md:mb-24">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold mb-4">Testimonials</p>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight">
-            What Our Users Say
+            Trusted by Emerging Market Traders
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Real stories from traders transforming their businesses
+            Improving trade execution and access to global markets
           </p>
         </div>
 
