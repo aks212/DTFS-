@@ -148,15 +148,15 @@
   }
 
   .glass {
-    background: hsl(var(--card) / 0.6);
+    background: hsl(var(--card) / 0.7);
     backdrop-filter: blur(20px) saturate(150%);
-    border: 1px solid hsl(var(--border) / 0.5);
+    border: 1px solid hsl(var(--border) / 0.6);
   }
 
   .glass-strong {
-    background: hsl(var(--card) / 0.85);
+    background: hsl(var(--card) / 0.9);
     backdrop-filter: blur(40px) saturate(180%);
-    border: 1px solid hsl(var(--border) / 0.8);
+    border: 1px solid hsl(var(--border));
   }
 
   .btn-primary {
