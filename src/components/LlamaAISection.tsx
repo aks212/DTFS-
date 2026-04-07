@@ -10,7 +10,7 @@ const LlamaAISection = () => {
   ];
 
   return (
-    <section className="section-padding relative overflow-hidden">
+    <section id="ai" className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-card"></div>
       <div className="absolute inset-0 grid-pattern"></div>
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
