@@ -1,15 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, Moon, Sun } from 'lucide-react';
 import VideoModal from './VideoModal';
 import FormModal from './FormModal';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const [isDark, setIsDark] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isFormModalOpen, setIsFormModalOpen] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      setIsDark(true);
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+    if (!isDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -18,9 +37,13 @@ const Header = () => {
   }, []);
 
   const navItems = [
+    { name: 'Home', href: '#' },
     { name: 'About', href: '#about' },
     { name: 'Features', href: '#features' },
+    { name: 'Card', href: '#card-showcase' },
     { name: 'How It Works', href: '#how-it-works' },
+    { name: 'AI', href: '#ai' },
+    { name: 'Team', href: '#team' },
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' }
   ];
@@ -44,12 +67,12 @@ const Header = () => {
             </a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-0.5">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 rounded-lg hover:bg-secondary/50"
+                  className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 rounded-lg hover:bg-secondary/50"
                 >
                   {item.name}
                 </a>
@@ -57,7 +80,15 @@ const Header = () => {
             </nav>
 
             {/* Desktop CTA */}
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-muted-foreground hover:text-foreground"
+                onClick={toggleTheme}
+              >
+                {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              </Button>
               <Button
                 variant="ghost"
                 size="sm"
@@ -78,10 +109,15 @@ const Header = () => {
               </Button>
             </div>
 
-            {/* Mobile Menu */}
-            <Button variant="ghost" size="icon" className="lg:hidden text-foreground" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
+            {/* Mobile controls */}
+            <div className="flex items-center gap-1 lg:hidden">
+              <Button variant="ghost" size="icon" className="text-foreground" onClick={toggleTheme}>
+                {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              </Button>
+              <Button variant="ghost" size="icon" className="text-foreground" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Navigation */}
