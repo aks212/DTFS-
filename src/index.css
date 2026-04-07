@@ -5,48 +5,48 @@
 
 @layer base {
   :root {
-    --background: 230 25% 5%;
-    --foreground: 0 0% 96%;
+    --background: 0 0% 100%;
+    --foreground: 215 25% 15%;
 
-    --card: 230 20% 8%;
-    --card-foreground: 0 0% 96%;
+    --card: 210 20% 98%;
+    --card-foreground: 215 25% 15%;
 
-    --popover: 230 20% 8%;
-    --popover-foreground: 0 0% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 45 93% 58%;
-    --primary-foreground: 230 25% 5%;
+    --primary: 213 70% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 230 15% 15%;
-    --secondary-foreground: 0 0% 96%;
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 215 25% 25%;
 
-    --muted: 230 15% 13%;
-    --muted-foreground: 230 10% 55%;
+    --muted: 210 15% 94%;
+    --muted-foreground: 215 10% 45%;
 
-    --accent: 230 15% 15%;
-    --accent-foreground: 0 0% 96%;
+    --accent: 210 20% 93%;
+    --accent-foreground: 215 25% 15%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 96%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 230 15% 15%;
-    --input: 230 15% 15%;
-    --ring: 45 93% 58%;
+    --border: 210 15% 88%;
+    --input: 210 15% 88%;
+    --ring: 213 70% 45%;
 
-    --sidebar-background: 230 20% 8%;
-    --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 45 93% 58%;
-    --sidebar-primary-foreground: 230 25% 5%;
-    --sidebar-accent: 230 15% 15%;
-    --sidebar-accent-foreground: 0 0% 96%;
-    --sidebar-border: 230 15% 15%;
-    --sidebar-ring: 45 93% 58%;
+    --sidebar-background: 210 20% 97%;
+    --sidebar-foreground: 215 25% 15%;
+    --sidebar-primary: 213 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 93%;
+    --sidebar-accent-foreground: 215 25% 15%;
+    --sidebar-border: 210 15% 88%;
+    --sidebar-ring: 213 70% 45%;
 
     --radius: 0.75rem;
 
-    --gold: 45 93% 58%;
-    --gold-light: 45 100% 72%;
-    --gold-dark: 38 92% 50%;
+    --gold: 213 70% 45%;
+    --gold-light: 213 65% 55%;
+    --gold-dark: 213 75% 35%;
     --emerald: 160 84% 39%;
     --emerald-light: 160 72% 52%;
   }
