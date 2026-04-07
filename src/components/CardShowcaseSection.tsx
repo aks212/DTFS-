@@ -30,7 +30,7 @@ const CardShowcaseSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="section-padding bg-background relative">
+    <section id="card-showcase" ref={sectionRef} className="section-padding bg-background relative">
       <div className="absolute inset-0 grid-pattern"></div>
       <div className="container mx-auto px-4 md:px-6 relative">
         <div className="text-center mb-16 md:mb-24">
