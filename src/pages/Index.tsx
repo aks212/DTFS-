@@ -9,6 +9,7 @@ import CardCarousel from '@/components/CardCarousel';
 import TradeTimeline from '@/components/TradeTimeline';
 import LlamaAISection from '@/components/LlamaAISection';
 import StatsSection from '@/components/StatsSection';
+import PricingSection from '@/components/PricingSection';
 import TeamSection from '@/components/TeamSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import CTASection from '@/components/CTASection';
@@ -32,6 +33,7 @@ const Index = () => {
       </section>
       <LlamaAISection />
       <StatsSection />
+      <PricingSection />
       <TeamSection />
       <TestimonialsSection />
       <CTASection />
