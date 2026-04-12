@@ -4,12 +4,13 @@ import HeroSection from '@/components/HeroSection';
 import TrustBar from '@/components/TrustBar';
 import AboutSection from '@/components/AboutSection';
 import FeaturesSection from '@/components/FeaturesSection';
+import PricingSection from '@/components/PricingSection';
+import FAQSection from '@/components/FAQSection';
 import CardShowcaseSection from '@/components/CardShowcaseSection';
 import CardCarousel from '@/components/CardCarousel';
 import TradeTimeline from '@/components/TradeTimeline';
 import LlamaAISection from '@/components/LlamaAISection';
 import StatsSection from '@/components/StatsSection';
-import PricingSection from '@/components/PricingSection';
 import TeamSection from '@/components/TeamSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import CTASection from '@/components/CTASection';
@@ -27,13 +28,14 @@ const Index = () => {
       <CardCarousel />
       <AboutSection />
       <FeaturesSection />
+      <PricingSection />
+      <FAQSection />
       <CardShowcaseSection />
       <section id="how-it-works">
         <TradeTimeline />
       </section>
       <LlamaAISection />
       <StatsSection />
-      <PricingSection />
       <TeamSection />
       <TestimonialsSection />
       <CTASection />
