@@ -43,6 +43,7 @@ const Header = () => {
     { name: 'Card', href: '#card-showcase' },
     { name: 'How It Works', href: '#how-it-works' },
     { name: 'AI', href: '#ai' },
+    { name: 'Pricing', href: '#pricing' },
     { name: 'Team', href: '#team' },
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' }
