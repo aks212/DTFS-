@@ -17,6 +17,7 @@ import CTASection from '@/components/CTASection';
 import FooterSection from '@/components/FooterSection';
 import FloatingSocialIcons from '@/components/FloatingSocialIcons';
 import MiniChatbot from '@/components/MiniChatbot';
+import ScrollReveal from '@/components/ScrollReveal';
 
 const Index = () => {
   return (
@@ -24,22 +25,65 @@ const Index = () => {
       <Header />
       <FloatingSocialIcons />
       <HeroSection />
-      <TrustBar />
-      <CardCarousel />
-      <AboutSection />
-      <FeaturesSection />
-      <PricingSection />
-      <FAQSection />
-      <CardShowcaseSection />
-      <section id="how-it-works">
-        <TradeTimeline />
-      </section>
-      <LlamaAISection />
-      <StatsSection />
-      <TeamSection />
-      <TestimonialsSection />
-      <CTASection />
-      <FooterSection />
+
+      <ScrollReveal variant="fade-up">
+        <TrustBar />
+      </ScrollReveal>
+
+      <ScrollReveal variant="fade-up" delay={0.1}>
+        <CardCarousel />
+      </ScrollReveal>
+
+      <ScrollReveal variant="fade-up">
+        <AboutSection />
+      </ScrollReveal>
+
+      <ScrollReveal variant="fade-up">
+        <FeaturesSection />
+      </ScrollReveal>
+
+      <ScrollReveal variant="scale" delay={0.1}>
+        <PricingSection />
+      </ScrollReveal>
+
+      <ScrollReveal variant="fade-up">
+        <FAQSection />
+      </ScrollReveal>
+
+      <ScrollReveal variant="fade-up">
+        <CardShowcaseSection />
+      </ScrollReveal>
+
+      <ScrollReveal variant="fade-up">
+        <section id="how-it-works">
+          <TradeTimeline />
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal variant="fade-left">
+        <LlamaAISection />
+      </ScrollReveal>
+
+      <ScrollReveal variant="fade-up">
+        <StatsSection />
+      </ScrollReveal>
+
+      <ScrollReveal variant="fade-up">
+        <TeamSection />
+      </ScrollReveal>
+
+      <ScrollReveal variant="fade-up" delay={0.1}>
+        <TestimonialsSection />
+      </ScrollReveal>
+
+      <ScrollReveal variant="scale">
+        <CTASection />
+      </ScrollReveal>
+
+      <ScrollReveal variant="fade">
+        <FooterSection />
+      </ScrollReveal>
+
       <MiniChatbot />
     </div>
   );
