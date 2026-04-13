@@ -1,8 +1,10 @@
 import React from 'react';
-import { Linkedin, Twitter, Youtube } from 'lucide-react';
+import { Linkedin, Twitter, Youtube, Facebook, Instagram } from 'lucide-react';
 
 const FloatingSocialIcons = () => {
   const socials = [
+    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Instagram, href: '#', label: 'Instagram' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
     { icon: Youtube, href: 'https://youtu.be/ddUETvq81ow', label: 'YouTube' },
