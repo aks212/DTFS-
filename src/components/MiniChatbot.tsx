@@ -45,6 +45,7 @@ const MiniChatbot = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           onClick={() => setIsOpen(true)}
+          aria-label="Open DTFS chat assistant"
           className="h-14 w-14 rounded-full bg-gold hover:bg-gold-dark text-background shadow-[0_8px_30px_hsl(var(--gold)/0.3)] hover:shadow-[0_8px_40px_hsl(var(--gold)/0.4)] transition-all duration-300"
         >
           <MessageCircle className="h-6 w-6" />
@@ -68,7 +69,7 @@ const MiniChatbot = () => {
                   </div>
                 </div>
               </div>
-              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="h-7 w-7 rounded-lg">
+              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} aria-label="Close chat" className="h-7 w-7 rounded-lg">
                 <X className="h-3.5 w-3.5" />
               </Button>
             </div>
@@ -108,7 +109,7 @@ const MiniChatbot = () => {
                   placeholder="Ask about DTFS..."
                   className="flex-1 bg-secondary border-0 rounded-lg text-sm h-9"
                 />
-                <Button onClick={handleSend} size="icon" className="bg-gold hover:bg-gold-dark text-background rounded-lg h-9 w-9">
+                <Button onClick={handleSend} size="icon" aria-label="Send message" className="bg-gold hover:bg-gold-dark text-background rounded-lg h-9 w-9">
                   <Send className="h-3.5 w-3.5" />
                 </Button>
               </div>

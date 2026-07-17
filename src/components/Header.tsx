@@ -87,6 +87,7 @@ const Header = () => {
                 size="icon"
                 className="text-muted-foreground hover:text-foreground"
                 onClick={toggleTheme}
+                aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
               >
                 {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
               </Button>
@@ -112,10 +113,10 @@ const Header = () => {
 
             {/* Mobile controls */}
             <div className="flex items-center gap-1 lg:hidden">
-              <Button variant="ghost" size="icon" className="text-foreground" onClick={toggleTheme}>
+              <Button variant="ghost" size="icon" className="text-foreground" onClick={toggleTheme} aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}>
                 {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
               </Button>
-              <Button variant="ghost" size="icon" className="text-foreground" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <Button variant="ghost" size="icon" className="text-foreground" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label={isMenuOpen ? 'Close menu' : 'Open menu'} aria-expanded={isMenuOpen}>
                 {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </Button>
             </div>

@@ -1,0 +1,16 @@
+# DTFS — Digital Trade Facilitation System
+
+> DTFS is Africa's AI-powered digital trade operating system, connecting SMEs to global markets with escrow-secured payments, intelligent deal matching, and automated compliance. Built by Nexus X Industries Ltd.
+
+## Pages
+
+- [Home](/): Overview of the DTFS platform, features, pricing, team, and FAQ.
+
+## Optional
+
+- [About section](/#about): DTFS mission and platform background.
+- [Features](/#features): Core platform capabilities.
+- [How It Works](/#how-it-works): Trade workflow timeline.
+- [AI Assistant](/#ai): Multilingual voice-first AI assistant capabilities.
+- [Pricing](/#pricing): Starter, Growth, and Enterprise tiers.
+- [FAQ](/#faq): Common questions on plans, onboarding, and compliance.
