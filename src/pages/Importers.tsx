@@ -73,23 +73,35 @@ const Importers = () => {
             ))}
           </div>
 
-          <div className="max-w-4xl mx-auto mt-16 md:mt-24 rounded-2xl border border-border bg-card/50 p-8 md:p-12">
-            <h2 className="text-2xl md:text-3xl font-display font-bold mb-6 tracking-tight">The importer journey on DTFS</h2>
-            <ol className="space-y-5">
-              {[
-                'Register your business and verify buyer credentials',
-                'Search vetted suppliers with transparent capacity and compliance data',
-                'Request quotes and compare landed cost across multiple exporters',
-                'Contract with milestone-based escrow to protect working capital',
-                'Track production, shipment, customs and delivery in real time',
-                'Confirm receipt and release payment with a complete audit trail',
-              ].map((step, i) => (
-                <li key={i} className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-gold/10 text-gold font-semibold flex items-center justify-center flex-shrink-0">{i + 1}</div>
-                  <p className="text-muted-foreground leading-relaxed pt-1">{step}</p>
-                </li>
-              ))}
-            </ol>
+          <div className="max-w-6xl mx-auto mt-16 md:mt-24 grid md:grid-cols-2 gap-8 items-center">
+            <div className="rounded-2xl border border-border bg-card/50 p-8 md:p-10 order-2 md:order-1">
+              <h2 className="text-2xl md:text-3xl font-display font-bold mb-6 tracking-tight">The importer journey on DTFS</h2>
+              <ol className="space-y-5">
+                {[
+                  'Register your business and verify buyer credentials',
+                  'Search vetted suppliers with transparent capacity and compliance data',
+                  'Request quotes and compare landed cost across multiple exporters',
+                  'Contract with milestone-based escrow to protect working capital',
+                  'Track production, shipment, customs and delivery in real time',
+                  'Confirm receipt and release payment with a complete audit trail',
+                ].map((step, i) => (
+                  <li key={i} className="flex gap-4">
+                    <div className="w-8 h-8 rounded-full bg-gold/10 text-gold font-semibold flex items-center justify-center flex-shrink-0">{i + 1}</div>
+                    <p className="text-muted-foreground leading-relaxed pt-1">{step}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <div className="rounded-2xl overflow-hidden border border-border order-1 md:order-2">
+              <img
+                src={importersJourney}
+                alt="Buyer inspecting quality of goods in a warehouse with a clipboard"
+                width={1024}
+                height={1024}
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
