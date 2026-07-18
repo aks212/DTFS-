@@ -3,8 +3,6 @@ import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import TrustBar from '@/components/TrustBar';
 import AboutSection from '@/components/AboutSection';
-import FeaturesSection from '@/components/FeaturesSection';
-import PricingSection from '@/components/PricingSection';
 import FAQSection from '@/components/FAQSection';
 import CardShowcaseSection from '@/components/CardShowcaseSection';
 import CardCarousel from '@/components/CardCarousel';
@@ -39,25 +37,11 @@ const Index = () => {
       </ScrollReveal>
 
       <ScrollReveal variant="fade-up">
-        <FeaturesSection />
-      </ScrollReveal>
-
-      <ScrollReveal variant="scale" delay={0.1}>
-        <PricingSection />
-      </ScrollReveal>
-
-      <ScrollReveal variant="fade-up">
         <FAQSection />
       </ScrollReveal>
 
       <ScrollReveal variant="fade-up">
         <CardShowcaseSection />
-      </ScrollReveal>
-
-      <ScrollReveal variant="fade-up">
-        <section id="how-it-works">
-          <TradeTimeline />
-        </section>
       </ScrollReveal>
 
       <ScrollReveal variant="fade-left">
