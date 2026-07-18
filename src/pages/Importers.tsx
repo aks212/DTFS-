@@ -42,9 +42,19 @@ const Importers = () => {
                 Get Importer Access <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button size="lg" variant="outline" className="btn-secondary" asChild>
-                <a href="/#how-it-works">See How It Works</a>
+                <a href="/#about">Learn More</a>
               </Button>
             </div>
+          </div>
+
+          <div className="max-w-5xl mx-auto mt-16 rounded-3xl overflow-hidden border border-border shadow-2xl">
+            <img
+              src={importersHero}
+              alt="Global importer reviewing shipments with a world map overlay in a modern warehouse"
+              width={1024}
+              height={1024}
+              className="w-full h-auto object-cover"
+            />
           </div>
         </div>
       </section>
