@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight, ShieldCheck, Globe2, FileCheck2, Banknote, LineChart, Users2 } from 'lucide-react';
 import Header from '@/components/Header';
 import FooterSection from '@/components/FooterSection';
 import FloatingSocialIcons from '@/components/FloatingSocialIcons';
 import { Button } from '@/components/ui/button';
-import { useState } from 'react';
 import FormModal from '@/components/FormModal';
+import exportersHero from '@/assets/exporters-hero.jpg';
+import exportersJourney from '@/assets/exporters-journey.jpg';
 
 const Exporters = () => {
   const [open, setOpen] = useState(false);
