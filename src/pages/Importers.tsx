@@ -5,6 +5,8 @@ import FooterSection from '@/components/FooterSection';
 import FloatingSocialIcons from '@/components/FloatingSocialIcons';
 import { Button } from '@/components/ui/button';
 import FormModal from '@/components/FormModal';
+import importersHero from '@/assets/importers-hero.jpg';
+import importersJourney from '@/assets/importers-journey.jpg';
 
 const Importers = () => {
   const [open, setOpen] = useState(false);
