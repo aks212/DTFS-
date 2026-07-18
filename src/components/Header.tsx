@@ -37,16 +37,16 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#about' },
-    { name: 'Features', href: '#features' },
-    { name: 'Card', href: '#card-showcase' },
-    { name: 'How It Works', href: '#how-it-works' },
-    { name: 'AI', href: '#ai' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Team', href: '#team' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/#about' },
+    { name: 'Exporters', href: '/exporters' },
+    { name: 'Importers', href: '/importers' },
+    { name: 'Features', href: '/#features' },
+    { name: 'How It Works', href: '/#how-it-works' },
+    { name: 'AI', href: '/#ai' },
+    { name: 'Pricing', href: '/#pricing' },
+    { name: 'Team', href: '/#team' },
+    { name: 'Contact', href: '/#contact' }
   ];
 
   return (
