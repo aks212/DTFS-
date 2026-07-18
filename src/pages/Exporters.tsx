@@ -73,23 +73,35 @@ const Exporters = () => {
             ))}
           </div>
 
-          <div className="max-w-4xl mx-auto mt-16 md:mt-24 rounded-2xl border border-border bg-card/50 p-8 md:p-12">
-            <h2 className="text-2xl md:text-3xl font-display font-bold mb-6 tracking-tight">The exporter journey on DTFS</h2>
-            <ol className="space-y-5">
-              {[
-                'Onboard your business and verify KYC/compliance credentials',
-                'List products with standardized specifications and pricing',
-                'Match with verified international buyers through intelligent deal discovery',
-                'Execute contracts with automated documentation and escrow-secured payment',
-                'Coordinate logistics, customs and delivery with real-time tracking',
-                'Receive settlement in your preferred currency with full audit trail',
-              ].map((step, i) => (
-                <li key={i} className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-gold/10 text-gold font-semibold flex items-center justify-center flex-shrink-0">{i + 1}</div>
-                  <p className="text-muted-foreground leading-relaxed pt-1">{step}</p>
-                </li>
-              ))}
-            </ol>
+          <div className="max-w-6xl mx-auto mt-16 md:mt-24 grid md:grid-cols-2 gap-8 items-center">
+            <div className="rounded-2xl overflow-hidden border border-border">
+              <img
+                src={exportersJourney}
+                alt="Hands signing an international trade contract with stamps and fountain pen"
+                width={1024}
+                height={1024}
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-2xl border border-border bg-card/50 p-8 md:p-10">
+              <h2 className="text-2xl md:text-3xl font-display font-bold mb-6 tracking-tight">The exporter journey on DTFS</h2>
+              <ol className="space-y-5">
+                {[
+                  'Onboard your business and verify KYC/compliance credentials',
+                  'List products with standardized specifications and pricing',
+                  'Match with verified international buyers through intelligent deal discovery',
+                  'Execute contracts with automated documentation and escrow-secured payment',
+                  'Coordinate logistics, customs and delivery with real-time tracking',
+                  'Receive settlement in your preferred currency with full audit trail',
+                ].map((step, i) => (
+                  <li key={i} className="flex gap-4">
+                    <div className="w-8 h-8 rounded-full bg-gold/10 text-gold font-semibold flex items-center justify-center flex-shrink-0">{i + 1}</div>
+                    <p className="text-muted-foreground leading-relaxed pt-1">{step}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </div>
       </section>
